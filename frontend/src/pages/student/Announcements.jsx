@@ -14,7 +14,7 @@ export const StudentAnnouncements = () => {
   return (
     <DashboardLayout>
       <div className="max-w-4xl">
-        <h1 className="font-syne text-3xl font-bold text-white mb-6">Announcements</h1>
+        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Announcements</h1>
 
         {/* Filter */}
         <div className="flex gap-2 mb-6">
@@ -24,8 +24,8 @@ export const StudentAnnouncements = () => {
               onClick={() => setFilter(f)}
               className={`font-mono text-xs tracking-widest uppercase px-3 py-2 border transition-colors ${
                 filter === f
-                  ? 'border-accent text-accent bg-navy'
-                  : 'border-[#222] text-[#555] hover:border-accent'
+                  ? 'border-[#A67B5B] text-[#A67B5B] bg-[#E6D8C3]'
+                  : 'border-[#D2B48C]/40 text-[#6F4E37] hover:border-[#A67B5B]'
               }`}
             >
               {f === 'all' ? 'All' : f.charAt(0).toUpperCase() + f.slice(1)}
@@ -36,15 +36,15 @@ export const StudentAnnouncements = () => {
         {/* Announcements */}
         <div className="space-y-3">
           {filtered.map((ann) => (
-            <div key={ann.id} className="bg-black border border-[#222] p-4 hover:bg-navy transition-colors">
+            <div key={ann.id} className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-4 hover:bg-[#E6D8C3] transition-colors">
               <div className="flex justify-between items-start mb-2">
-                <h3 className="font-syne font-bold text-white">{ann.title}</h3>
-                <span className="font-mono text-xs text-accent tracking-widest uppercase">
+                <h3 className="font-syne font-bold text-[#3E2C23]">{ann.title}</h3>
+                <span className="font-mono text-xs text-[#A67B5B] tracking-widest uppercase">
                   {ann.role}
                 </span>
               </div>
-              <p className="text-white text-sm mb-3">{ann.body}</p>
-              <div className="font-mono text-xs text-[#555]">
+              <p className="text-[#3E2C23] text-sm mb-3">{ann.body}</p>
+              <div className="font-mono text-xs text-[#6F4E37]">
                 Posted by {ann.postedBy} · {new Date(ann.createdAt).toLocaleDateString()}
               </div>
             </div>

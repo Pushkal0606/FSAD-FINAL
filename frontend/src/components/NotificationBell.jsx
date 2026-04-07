@@ -16,7 +16,7 @@ export const NotificationBell = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative p-2 text-white hover:text-accent transition-colors"
+        className="relative p-2 text-[#3E2C23] hover:text-[#A67B5B] transition-colors"
       >
         <Bell size={20} />
         {unreadCount > 0 && (
@@ -28,27 +28,27 @@ export const NotificationBell = () => {
 
       {isOpen && (
         <>
-          <div className="absolute right-0 mt-2 w-80 bg-black border border-[#222] z-50">
-            <div className="border-b border-[#222] px-4 py-3">
-              <h3 className="font-mono text-xs text-white tracking-widest uppercase font-bold">Latest Notifications</h3>
+          <div className="absolute right-0 mt-2 w-80 bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 z-50">
+            <div className="border-b border-[#D2B48C]/40 px-4 py-3">
+              <h3 className="font-mono text-xs text-[#3E2C23] tracking-widest uppercase font-bold">Latest Notifications</h3>
             </div>
             <div className="max-h-64 overflow-y-auto">
               {recentAnnouncements.length === 0 ? (
-                <div className="px-4 py-6 text-center text-[#555]">No notifications</div>
+                <div className="px-4 py-6 text-center text-[#6F4E37]">No notifications</div>
               ) : (
                 recentAnnouncements.map((ann) => (
-                  <div key={ann.id} className="border-b border-[#222] px-4 py-3 hover:bg-navy transition-colors">
-                    <p className="text-white text-sm font-syne font-bold line-clamp-1">{ann.title}</p>
-                    <p className="text-[#555] text-xs font-mono mt-1">{ann.postedBy}</p>
+                  <div key={ann.id} className="border-b border-[#D2B48C]/40 px-4 py-3 hover:bg-[#E6D8C3] transition-colors">
+                    <p className="text-[#3E2C23] text-sm font-syne font-bold line-clamp-1">{ann.title}</p>
+                    <p className="text-[#6F4E37] text-xs font-mono mt-1">{ann.postedBy}</p>
                   </div>
                 ))
               )}
             </div>
             {unreadCount > 0 && (
-              <div className="border-t border-[#222] px-4 py-2">
+              <div className="border-t border-[#D2B48C]/40 px-4 py-2">
                 <button
                   onClick={markAsRead}
-                  className="w-full text-accent font-mono text-xs tracking-widest uppercase hover:text-white transition-colors"
+                  className="w-full text-[#A67B5B] font-mono text-xs tracking-widest uppercase hover:text-[#3E2C23] transition-colors"
                 >
                   Mark as Read
                 </button>

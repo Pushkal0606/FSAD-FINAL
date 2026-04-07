@@ -16,7 +16,7 @@ export const TeacherStudents = () => {
   return (
     <DashboardLayout>
       <div className="max-w-5xl">
-        <h1 className="font-syne text-3xl font-bold text-white mb-6">Students</h1>
+        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Students</h1>
 
         <div className="mb-6">
           <input
@@ -24,18 +24,18 @@ export const TeacherStudents = () => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search students..."
-            className="w-full bg-black border border-[#555] px-4 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+            className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#555] px-4 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
           />
         </div>
 
-        <div className="overflow-x-auto border border-[#222]">
+        <div className="overflow-x-auto border border-[#D2B48C]/40">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-[#222] bg-[#0a0a0a]">
+              <tr className="border-b border-[#D2B48C]/40 bg-[#E6D8C3]">
                 {['Name', 'Enrollment ID', 'Department', 'Class', 'Email', 'Action'].map((h) => (
                   <th
                     key={h}
-                    className="px-4 py-3 text-left font-mono text-xs tracking-widest uppercase text-white"
+                    className="px-4 py-3 text-left font-mono text-xs tracking-widest uppercase text-[#3E2C23]"
                   >
                     {h}
                   </th>
@@ -46,20 +46,20 @@ export const TeacherStudents = () => {
               {filtered.map((student) => (
                 <tr
                   key={student.id}
-                  className="border-b border-[#222] hover:bg-navy hover:border-l-4 hover:border-l-accent transition-all"
+                  className="border-b border-[#D2B48C]/40 hover:bg-[#E6D8C3] hover:border-l-4 hover:border-l-[#A67B5B] transition-all"
                 >
-                  <td className="px-4 py-3 text-white text-sm">{student.name}</td>
-                  <td className="px-4 py-3 text-white text-sm font-mono">{student.enrollmentId}</td>
-                  <td className="px-4 py-3 text-white text-sm">{student.department}</td>
-                  <td className="px-4 py-3 text-white text-sm">{student.classId}</td>
-                  <td className="px-4 py-3 text-[#555] text-sm">{student.email}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] text-sm">{student.name}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] text-sm font-mono">{student.enrollmentId}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] text-sm">{student.department}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] text-sm">{student.classId}</td>
+                  <td className="px-4 py-3 text-[#6F4E37] text-sm">{student.email}</td>
                   <td className="px-4 py-3">
                     <button
                       onClick={() => {
                         setSelectedStudent(student);
                         setModalOpen(true);
                       }}
-                      className="text-accent hover:text-white font-mono text-xs transition-colors"
+                      className="text-[#A67B5B] hover:text-[#3E2C23] font-mono text-xs transition-colors"
                     >
                       View Details
                     </button>
@@ -79,7 +79,7 @@ export const TeacherStudents = () => {
           footerActions={
             <button
               onClick={() => setModalOpen(false)}
-              className="px-4 py-2 border border-[#222] text-white hover:border-accent transition-colors"
+              className="px-4 py-2 border border-[#D2B48C]/40 text-[#3E2C23] hover:border-[#A67B5B] transition-colors"
             >
               Close
             </button>
@@ -87,14 +87,14 @@ export const TeacherStudents = () => {
         >
           <div className="space-y-4">
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-20 h-20 bg-navy border-2 border-accent flex items-center justify-center font-mono text-xl font-bold text-accent">
+              <div className="w-20 h-20 bg-[#E6D8C3] border-2 border-[#A67B5B] flex items-center justify-center font-mono text-xl font-bold text-[#A67B5B]">
                 {selectedStudent.avatar}
               </div>
               <div>
-                <h3 className="font-syne font-bold text-white text-lg">
+                <h3 className="font-syne font-bold text-[#3E2C23] text-lg">
                   {selectedStudent.name}
                 </h3>
-                <p className="text-accent font-mono text-xs">{selectedStudent.enrollmentId}</p>
+                <p className="text-[#A67B5B] font-mono text-xs">{selectedStudent.enrollmentId}</p>
               </div>
             </div>
 
@@ -105,10 +105,10 @@ export const TeacherStudents = () => {
               { label: 'Enrollment ID', value: selectedStudent.enrollmentId },
             ].map((field) => (
               <div key={field.label}>
-                <p className="font-mono text-xs text-[#555] tracking-widest uppercase mb-1">
+                <p className="font-mono text-xs text-[#6F4E37] tracking-widest uppercase mb-1">
                   {field.label}
                 </p>
-                <p className="text-white">{field.value}</p>
+                <p className="text-[#3E2C23]">{field.value}</p>
               </div>
             ))}
           </div>

@@ -16,7 +16,7 @@ export const TeacherGrades = () => {
   const getPercentageColor = (grade) => {
     if (!grade) return '';
     const num = parseInt(grade);
-    if (num >= 80) return 'text-accent';
+    if (num >= 80) return 'text-[#A67B5B]';
     if (num >= 60) return 'text-yellow-500';
     return 'text-red-500';
   };
@@ -24,17 +24,17 @@ export const TeacherGrades = () => {
   return (
     <DashboardLayout>
       <div className="max-w-5xl">
-        <h1 className="font-syne text-3xl font-bold text-white mb-6">Grades</h1>
+        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Grades</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div>
-            <label className="block font-mono text-xs tracking-widest uppercase text-white mb-2">
+            <label className="block font-mono text-xs tracking-widest uppercase text-[#3E2C23] mb-2">
               Select Class
             </label>
             <select
               value={selectedClass}
               onChange={(e) => setSelectedClass(e.target.value)}
-              className="w-full bg-black border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+              className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
             >
               {['101', '102', '103'].map((c) => (
                 <option key={c} value={c}>
@@ -44,13 +44,13 @@ export const TeacherGrades = () => {
             </select>
           </div>
           <div>
-            <label className="block font-mono text-xs tracking-widest uppercase text-white mb-2">
+            <label className="block font-mono text-xs tracking-widest uppercase text-[#3E2C23] mb-2">
               Select Subject
             </label>
             <select
               value={selectedSubject}
               onChange={(e) => setSelectedSubject(e.target.value)}
-              className="w-full bg-black border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+              className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
             >
               {['Data Structures', 'Web Development', 'Database Design'].map((s) => (
                 <option key={s} value={s}>
@@ -61,14 +61,14 @@ export const TeacherGrades = () => {
           </div>
         </div>
 
-        <div className="overflow-x-auto border border-[#222]">
+        <div className="overflow-x-auto border border-[#D2B48C]/40">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-[#222] bg-[#0a0a0a]">
+              <tr className="border-b border-[#D2B48C]/40 bg-[#E6D8C3]">
                 {['Student Name', 'Assignment 1', 'Assignment 2', 'Assignment 3', 'Final Grade'].map((h) => (
                   <th
                     key={h}
-                    className="px-4 py-3 text-left font-mono text-xs tracking-widest uppercase text-white"
+                    className="px-4 py-3 text-left font-mono text-xs tracking-widest uppercase text-[#3E2C23]"
                   >
                     {h}
                   </th>
@@ -79,9 +79,9 @@ export const TeacherGrades = () => {
               {filteredStudents.map((student) => (
                 <tr
                   key={student.id}
-                  className="border-b border-[#222] hover:bg-navy hover:border-l-4 hover:border-l-accent transition-all"
+                  className="border-b border-[#D2B48C]/40 hover:bg-[#E6D8C3] hover:border-l-4 hover:border-l-[#A67B5B] transition-all"
                 >
-                  <td className="px-4 py-3 text-white text-sm">{student.name}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] text-sm">{student.name}</td>
                   {[1, 2, 3].map((num) => (
                     <td key={num} className="px-4 py-3">
                       <input
@@ -91,7 +91,7 @@ export const TeacherGrades = () => {
                         onChange={(e) =>
                           handleGradeChange(`${student.id}-${num}`, e.target.value)
                         }
-                        className="w-20 bg-[#0a0a0a] border border-[#555] px-2 py-1 text-white text-sm focus:border-accent focus:outline-none transition-colors"
+                        className="w-20 bg-[#E6D8C3] border border-[#555] px-2 py-1 text-[#3E2C23] text-sm focus:border-[#A67B5B] focus:outline-none transition-colors"
                         placeholder="0-100"
                       />
                     </td>
@@ -106,7 +106,7 @@ export const TeacherGrades = () => {
         </div>
 
         <div className="mt-6">
-          <button className="bg-black border border-white text-white font-mono text-sm px-6 py-2 hover:bg-accent hover:text-black hover:border-accent transition-all">
+          <button className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-6 py-2 hover:bg-accent hover:text-black hover:border-[#A67B5B] transition-all">
             Save Grades
           </button>
         </div>

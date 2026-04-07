@@ -26,19 +26,19 @@ export const RolesPermissions = () => {
   return (
     <DashboardLayout>
       <div className="max-w-6xl">
-        <h1 className="font-syne text-3xl font-bold text-white mb-6">Roles & Permissions</h1>
+        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Roles & Permissions</h1>
 
-        <div className="overflow-x-auto border border-[#222]">
+        <div className="overflow-x-auto border border-[#D2B48C]/40">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-[#222] bg-[#0a0a0a]">
-                <th className="px-4 py-3 text-left font-mono text-xs tracking-widest uppercase text-white">
+              <tr className="border-b border-[#D2B48C]/40 bg-[#E6D8C3]">
+                <th className="px-4 py-3 text-left font-mono text-xs tracking-widest uppercase text-[#3E2C23]">
                   Role
                 </th>
                 {modules.map((module) => (
                   <th
                     key={module}
-                    className="px-4 py-3 text-center font-mono text-xs tracking-widest uppercase text-white"
+                    className="px-4 py-3 text-center font-mono text-xs tracking-widest uppercase text-[#3E2C23]"
                   >
                     {module}
                   </th>
@@ -49,9 +49,9 @@ export const RolesPermissions = () => {
               {roles.map((role) => (
                 <tr
                   key={role}
-                  className="border-b border-[#222] hover:bg-navy hover:border-l-4 hover:border-l-accent transition-all"
+                  className="border-b border-[#D2B48C]/40 hover:bg-[#E6D8C3] hover:border-l-4 hover:border-l-[#A67B5B] transition-all"
                 >
-                  <td className="px-4 py-3 text-white font-mono text-sm">{role}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] font-mono text-sm">{role}</td>
                   {modules.map((module) => (
                     <td
                       key={`${role}-${module}`}
@@ -61,7 +61,7 @@ export const RolesPermissions = () => {
                         onClick={() => togglePermission(role, module)}
                         className={`w-6 h-6 border transition-colors ${
                           permissions[role].includes(module)
-                            ? 'bg-accent border-accent'
+                            ? 'bg-accent border-[#A67B5B]'
                             : 'border-[#555]'
                         }`}
                       >
@@ -76,7 +76,7 @@ export const RolesPermissions = () => {
         </div>
 
         <div className="mt-6">
-          <button className="bg-black border border-white text-white font-mono text-sm px-6 py-2 hover:bg-accent hover:text-black hover:border-accent transition-all">
+          <button className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-6 py-2 hover:bg-accent hover:text-black hover:border-[#A67B5B] transition-all">
             Save Permissions
           </button>
         </div>

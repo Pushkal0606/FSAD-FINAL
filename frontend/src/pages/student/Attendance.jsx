@@ -19,13 +19,13 @@ export const StudentAttendance = () => {
   const getStatusColor = (status) => {
     switch (status) {
       case 'PRESENT':
-        return 'bg-transparent border-accent border';
+        return 'bg-transparent border-[#A67B5B] border';
       case 'ABSENT':
         return 'bg-transparent border-white border relative';
       case 'LATE':
         return 'bg-transparent border-white border relative';
       default:
-        return 'bg-[#111] border border-[#222]';
+        return 'bg-[#111] border border-[#D2B48C]/40';
     }
   };
 
@@ -38,22 +38,22 @@ export const StudentAttendance = () => {
   return (
     <DashboardLayout>
       <div className="max-w-4xl">
-        <h1 className="font-syne text-3xl font-bold text-white mb-6">Attendance</h1>
+        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Attendance</h1>
 
         {/* Month Navigation */}
-        <div className="flex justify-between items-center mb-6 border-b border-[#222] pb-4">
+        <div className="flex justify-between items-center mb-6 border-b border-[#D2B48C]/40 pb-4">
           <button
             onClick={() => setMonth(month === 0 ? 11 : month - 1)}
-            className="text-white hover:text-accent transition-colors"
+            className="text-[#3E2C23] hover:text-[#A67B5B] transition-colors"
           >
             <ChevronLeft size={24} />
           </button>
-          <div className="font-mono text-sm tracking-widest uppercase text-white">
+          <div className="font-mono text-sm tracking-widest uppercase text-[#3E2C23]">
             {new Date(year, month).toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
           </div>
           <button
             onClick={() => setMonth(month === 11 ? 0 : month + 1)}
-            className="text-white hover:text-accent transition-colors"
+            className="text-[#3E2C23] hover:text-[#A67B5B] transition-colors"
           >
             <ChevronRight size={24} />
           </button>
@@ -65,7 +65,7 @@ export const StudentAttendance = () => {
             {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => (
               <div
                 key={day}
-                className="aspect-square flex items-center justify-center font-mono text-xs text-[#555] font-bold"
+                className="aspect-square flex items-center justify-center font-mono text-xs text-[#6F4E37] font-bold"
               >
                 {day}
               </div>
@@ -85,31 +85,31 @@ export const StudentAttendance = () => {
         </div>
 
         {/* Summary */}
-        <div className="bg-black border border-[#222] p-6">
+        <div className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-6">
           <div className="grid grid-cols-4 gap-4">
             <div className="text-center">
-              <div className="font-mono text-xs text-[#555] tracking-widest uppercase mb-1">
+              <div className="font-mono text-xs text-[#6F4E37] tracking-widest uppercase mb-1">
                 Present
               </div>
-              <div className="font-syne text-2xl font-bold text-accent">{stats.present}</div>
+              <div className="font-syne text-2xl font-bold text-[#A67B5B]">{stats.present}</div>
             </div>
             <div className="text-center">
-              <div className="font-mono text-xs text-[#555] tracking-widest uppercase mb-1">
+              <div className="font-mono text-xs text-[#6F4E37] tracking-widest uppercase mb-1">
                 Absent
               </div>
-              <div className="font-syne text-2xl font-bold text-white">{stats.absent}</div>
+              <div className="font-syne text-2xl font-bold text-[#3E2C23]">{stats.absent}</div>
             </div>
             <div className="text-center">
-              <div className="font-mono text-xs text-[#555] tracking-widest uppercase mb-1">
+              <div className="font-mono text-xs text-[#6F4E37] tracking-widest uppercase mb-1">
                 Late
               </div>
-              <div className="font-syne text-2xl font-bold text-white">{stats.late}</div>
+              <div className="font-syne text-2xl font-bold text-[#3E2C23]">{stats.late}</div>
             </div>
             <div className="text-center">
-              <div className="font-mono text-xs text-[#555] tracking-widest uppercase mb-1">
+              <div className="font-mono text-xs text-[#6F4E37] tracking-widest uppercase mb-1">
                 Percentage
               </div>
-              <div className="font-syne text-2xl font-bold text-accent">{percentage}%</div>
+              <div className="font-syne text-2xl font-bold text-[#A67B5B]">{percentage}%</div>
             </div>
           </div>
         </div>

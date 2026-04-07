@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Users, BookOpen, BarChart3, Settings } from 'lucide-react';
 import { RoleCard } from '../components/RoleCard';
+import { BGPattern } from '../components/BGPattern';
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -14,27 +15,26 @@ export const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black flex flex-col">
-      <header className="border-b border-[#222] px-6 py-4 flex justify-between items-center">
-        <div className="font-mono text-sm font-bold text-white tracking-widest">EDUCORE</div>
-        <div className="font-mono text-xs text-[#555] tracking-widest">FSAD-PS13 // Select your role to continue</div>
+    <div className="min-h-screen bg-[#F5EFE6] flex flex-col relative overflow-hidden z-0">
+      <BGPattern variant="interactive-dots" fill="#D2B48C" size={35} className="" />
+      <header className="border-b border-[#D2B48C] px-6 py-4 flex justify-between items-center z-10">
+        <div className="font-mono text-sm font-bold text-[#3E2C23] tracking-widest bg-[#F5EFE6]/70 backdrop-blur-md px-3 py-1 rounded-sm border border-[#D2B48C]">EDUCORE</div>
+        <div className="font-mono text-xs text-[#3E2C23] tracking-widest bg-[#F5EFE6]/70 backdrop-blur-md px-3 py-1 rounded-sm border border-[#D2B48C]">FSAD-PS13 // Select your role to continue</div>
       </header>
 
-      <main className="flex-1 flex flex-col items-center justify-center px-6 py-12">
-        <h1 className="font-syne text-5xl md:text-6xl font-bold text-white mb-4 text-center">
-          Who are you?
+      <main className="flex-1 flex flex-col items-center justify-center px-6 py-12 z-10 pointer-events-none">
+        <h1 className="font-syne text-5xl md:text-6xl font-bold text-[#3E2C23] mb-4 text-center bg-[#F5EFE6]/70 backdrop-blur-md p-4 rounded-sm border border-[#D2B48C] pointer-events-auto shadow-sm">
+          Select Your Role
         </h1>
-        <p className="font-mono text-xs tracking-widest text-[#555] mb-12">
-          SELECT YOUR ROLE TO ACCESS YOUR PORTAL
+        <p className="font-mono text-xs tracking-widest text-[#8B6F5C] italic mb-12 bg-[#F5EFE6]/70 backdrop-blur-md px-4 py-2 rounded-sm border border-[#D2B48C] pointer-events-auto">
+          Choose your path and access your academic space
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-[#222] w-full max-w-3xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl z-10 pointer-events-auto">
           {roles.map((role, idx) => (
             <div
               key={idx}
-              className={`${idx % 2 !== 1 ? 'md:border-r border-[#222]' : ''} ${
-                idx < 2 ? 'border-b border-[#222]' : ''
-              }`}
+              className="border border-[#D2B48C]/40 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               <RoleCard {...role} />
             </div>
@@ -42,8 +42,8 @@ export const Home = () => {
         </div>
       </main>
 
-      <footer className="border-t border-[#222] px-6 py-4 text-center">
-        <div className="font-mono text-xs text-[#555] tracking-widest">
+      <footer className="border-t border-[#D2B48C] px-6 py-4 text-center z-10">
+        <div className="font-mono text-xs text-[#3E2C23] tracking-widest bg-[#F5EFE6]/70 backdrop-blur-md inline-block px-4 py-2 rounded-sm border border-[#D2B48C]">
           FSAD-PS13 · EDUCORE · 2025
         </div>
       </footer>

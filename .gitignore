@@ -1,0 +1,35 @@
+# Environments
+.env
+.env.*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directories
+node_modules/
+jspm_packages/
+backend/target/
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Private Scripts
+themepatch.js
+themepatch2.js
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo

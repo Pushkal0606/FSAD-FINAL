@@ -70,15 +70,15 @@ export const Sidebar = ({ isOpen, onClose }) => {
 
   return (
     <>
-      {isOpen && <div className="fixed inset-0 bg-black/50 z-30 md:hidden" onClick={onClose} />}
+      {isOpen && <div className="fixed inset-0 bg-[#3E2C23]/50 z-30 md:hidden" onClick={onClose} />}
       <aside
-        className={`fixed left-0 top-0 bottom-0 w-56 bg-black border-r border-[#222] z-40 transform transition-transform ${
+        className={`fixed left-0 top-0 bottom-0 w-56 bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border-r border-[#D2B48C]/40 z-40 transform transition-transform ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0 md:relative flex flex-col overflow-y-auto`}
       >
-        <div className="p-6 border-b border-[#222] flex items-center justify-between md:justify-start">
-          <div className="font-mono text-sm font-bold text-white tracking-widest">EDUERP</div>
-          <button onClick={onClose} className="md:hidden text-[#555] hover:text-white">
+        <div className="p-6 border-b border-[#D2B48C]/40 flex items-center justify-between md:justify-start">
+          <div className="font-mono text-sm font-bold text-[#3E2C23] tracking-widest">EDUERP</div>
+          <button onClick={onClose} className="md:hidden text-[#6F4E37] hover:text-[#3E2C23]">
             <X size={20} />
           </button>
         </div>
@@ -93,8 +93,8 @@ export const Sidebar = ({ isOpen, onClose }) => {
               }}
               className={`w-full flex items-center gap-3 px-3 py-2 transition-all border-l-4 ${
                 isActive(item.path)
-                  ? 'border-l-accent text-accent bg-[#0a0a0a]'
-                  : 'border-l-transparent text-white hover:text-accent hover:border-l-accent'
+                  ? 'border-l-[#A67B5B] text-[#A67B5B] bg-[#E6D8C3]'
+                  : 'border-l-transparent text-[#3E2C23] hover:text-[#A67B5B] hover:border-l-[#A67B5B]'
               }`}
             >
               <item.icon size={18} />
@@ -103,10 +103,10 @@ export const Sidebar = ({ isOpen, onClose }) => {
           ))}
         </nav>
 
-        <div className="border-t border-[#222] p-3">
+        <div className="border-t border-[#D2B48C]/40 p-3">
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-3 px-3 py-2 text-white hover:text-accent transition-colors border border-transparent hover:border-accent"
+            className="w-full flex items-center gap-3 px-3 py-2 text-[#3E2C23] hover:text-[#A67B5B] transition-colors border border-transparent hover:border-[#A67B5B]"
           >
             <LogOut size={18} />
             <span className="font-mono text-xs tracking-widest uppercase">Logout</span>

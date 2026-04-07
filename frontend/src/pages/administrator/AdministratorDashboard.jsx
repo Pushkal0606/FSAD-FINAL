@@ -31,7 +31,7 @@ export const AdministratorDashboard = () => {
   return (
     <DashboardLayout>
       <div className="max-w-6xl">
-        <h1 className="font-syne text-3xl font-bold text-white mb-6">Dashboard</h1>
+        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Dashboard</h1>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
@@ -41,29 +41,29 @@ export const AdministratorDashboard = () => {
             { icon: TrendingUp, label: 'Attendance Rate', value: `${stats.attendanceRate}%` },
             { icon: BarChart3, label: 'Pending Reports', value: stats.pendingReports },
           ].map((stat, idx) => (
-            <div key={idx} className="bg-black border border-[#222] p-4 hover:border-t-4 hover:border-t-accent transition-all">
+            <div key={idx} className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-4 hover:border-t-4 hover:border-t-[#A67B5B] transition-all">
               <div className="flex items-center gap-3 mb-2">
-                <stat.icon size={20} className="text-[#555]" />
-                <span className="font-mono text-xs tracking-widest uppercase text-[#555]">
+                <stat.icon size={20} className="text-[#6F4E37]" />
+                <span className="font-mono text-xs tracking-widest uppercase text-[#6F4E37]">
                   {stat.label}
                 </span>
               </div>
-              <div className="font-syne text-2xl font-bold text-white">{stat.value}</div>
+              <div className="font-syne text-2xl font-bold text-[#3E2C23]">{stat.value}</div>
             </div>
           ))}
         </div>
 
         {/* Department Breakdown */}
         <div>
-          <h2 className="font-syne text-xl font-bold text-white mb-4">Department Overview</h2>
+          <h2 className="font-syne text-xl font-bold text-[#3E2C23] mb-4">Department Overview</h2>
           <div className="space-y-3">
             {departments.map((dept) => (
-              <div key={dept.name} className="bg-black border border-[#222] p-4">
+              <div key={dept.name} className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-4">
                 <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-syne font-bold text-white">{dept.name}</h3>
-                  <span className="text-accent font-mono text-sm">{dept.students} students</span>
+                  <h3 className="font-syne font-bold text-[#3E2C23]">{dept.name}</h3>
+                  <span className="text-[#A67B5B] font-mono text-sm">{dept.students} students</span>
                 </div>
-                <div className="w-full bg-[#0a0a0a] border border-[#222] h-2">
+                <div className="w-full bg-[#E6D8C3] border border-[#D2B48C]/40 h-2">
                   <div
                     className="bg-accent h-full"
                     style={{ width: `${dept.percentage}%` }}

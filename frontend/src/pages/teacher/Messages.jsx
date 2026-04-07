@@ -30,28 +30,28 @@ export const TeacherMessages = () => {
     <DashboardLayout>
       <div className="max-w-4xl flex gap-4 h-[calc(100vh-140px)]">
         {/* Threads List */}
-        <div className="w-full md:w-1/3 bg-black border border-[#222]">
-          <div className="border-b border-[#222] p-4">
-            <h2 className="font-syne font-bold text-white">Messages</h2>
+        <div className="w-full md:w-1/3 bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40">
+          <div className="border-b border-[#D2B48C]/40 p-4">
+            <h2 className="font-syne font-bold text-[#3E2C23]">Messages</h2>
           </div>
           <div className="overflow-y-auto">
             {threads.map((thread) => (
               <button
                 key={thread.id}
                 onClick={() => selectThread(thread)}
-                className={`w-full text-left px-4 py-3 border-b border-[#222] transition-colors ${
+                className={`w-full text-left px-4 py-3 border-b border-[#D2B48C]/40 transition-colors ${
                   selectedThread?.id === thread.id
-                    ? 'bg-navy border-l-4 border-l-accent'
-                    : 'hover:bg-navy'
+                    ? 'bg-[#E6D8C3] border-l-4 border-l-[#A67B5B]'
+                    : 'hover:bg-[#E6D8C3]'
                 }`}
               >
-                <div className="font-mono text-xs text-[#555] tracking-widest uppercase mb-1">
+                <div className="font-mono text-xs text-[#6F4E37] tracking-widest uppercase mb-1">
                   {Object.entries(thread.participantNames)
                     .filter(([id]) => id != 101)
                     .map(([, name]) => name)
                     .join(', ')}
                 </div>
-                <div className="text-white text-sm line-clamp-1">
+                <div className="text-[#3E2C23] text-sm line-clamp-1">
                   {thread.messages[thread.messages.length - 1]?.body || 'No messages'}
                 </div>
               </button>
@@ -61,9 +61,9 @@ export const TeacherMessages = () => {
 
         {/* Chat Area */}
         {selectedThread && (
-          <div className="flex-1 bg-black border border-[#222] flex flex-col">
-            <div className="border-b border-[#222] p-4">
-              <h3 className="font-syne font-bold text-white">
+          <div className="flex-1 bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 flex flex-col">
+            <div className="border-b border-[#D2B48C]/40 p-4">
+              <h3 className="font-syne font-bold text-[#3E2C23]">
                 {Object.entries(selectedThread.participantNames)
                   .filter(([id]) => id != 101)
                   .map(([, name]) => name)
@@ -81,7 +81,7 @@ export const TeacherMessages = () => {
                     className={`max-w-xs px-4 py-2 ${
                       msg.senderId === 101
                         ? 'bg-accent text-black'
-                        : 'bg-[#0a0a0a] text-white border border-[#222]'
+                        : 'bg-[#E6D8C3] text-[#3E2C23] border border-[#D2B48C]/40'
                     }`}
                   >
                     <p className="text-sm">{msg.body}</p>
@@ -96,18 +96,18 @@ export const TeacherMessages = () => {
               ))}
             </div>
 
-            <div className="border-t border-[#222] p-4 flex gap-2">
+            <div className="border-t border-[#D2B48C]/40 p-4 flex gap-2">
               <input
                 type="text"
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                 placeholder="Type message..."
-                className="flex-1 bg-[#0a0a0a] border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+                className="flex-1 bg-[#E6D8C3] border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
               />
               <button
                 onClick={handleSendMessage}
-                className="text-accent hover:text-white transition-colors"
+                className="text-[#A67B5B] hover:text-[#3E2C23] transition-colors"
               >
                 <Send size={20} />
               </button>

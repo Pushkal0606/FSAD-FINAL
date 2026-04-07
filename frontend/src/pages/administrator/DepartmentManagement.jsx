@@ -34,27 +34,27 @@ export const DepartmentManagement = () => {
     <DashboardLayout>
       <div className="max-w-5xl">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="font-syne text-3xl font-bold text-white">Department Management</h1>
+          <h1 className="font-syne text-3xl font-bold text-[#3E2C23]">Department Management</h1>
           <button
             onClick={() => {
               setIsCreating(true);
               setFormData({ name: '', hod: '', students: '', teachers: '' });
               setModalOpen(true);
             }}
-            className="bg-black border border-white text-white font-mono text-sm px-4 py-2 hover:bg-accent hover:text-black hover:border-accent transition-all"
+            className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-4 py-2 hover:bg-accent hover:text-black hover:border-[#A67B5B] transition-all"
           >
             Add Department
           </button>
         </div>
 
-        <div className="overflow-x-auto border border-[#222]">
+        <div className="overflow-x-auto border border-[#D2B48C]/40">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-[#222] bg-[#0a0a0a]">
+              <tr className="border-b border-[#D2B48C]/40 bg-[#E6D8C3]">
                 {['Department Name', 'HOD', 'Students', 'Teachers'].map((h) => (
                   <th
                     key={h}
-                    className="px-4 py-3 text-left font-mono text-xs tracking-widest uppercase text-white"
+                    className="px-4 py-3 text-left font-mono text-xs tracking-widest uppercase text-[#3E2C23]"
                   >
                     {h}
                   </th>
@@ -65,12 +65,12 @@ export const DepartmentManagement = () => {
               {departments.map((dept) => (
                 <tr
                   key={dept.id}
-                  className="border-b border-[#222] hover:bg-navy hover:border-l-4 hover:border-l-accent transition-all"
+                  className="border-b border-[#D2B48C]/40 hover:bg-[#E6D8C3] hover:border-l-4 hover:border-l-[#A67B5B] transition-all"
                 >
-                  <td className="px-4 py-3 text-white text-sm">{dept.name}</td>
-                  <td className="px-4 py-3 text-white text-sm">{dept.hod}</td>
-                  <td className="px-4 py-3 text-white text-sm">{dept.students}</td>
-                  <td className="px-4 py-3 text-white text-sm">{dept.teachers}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] text-sm">{dept.name}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] text-sm">{dept.hod}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] text-sm">{dept.students}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] text-sm">{dept.teachers}</td>
                 </tr>
               ))}
             </tbody>
@@ -86,7 +86,7 @@ export const DepartmentManagement = () => {
           <>
             <button
               onClick={() => setModalOpen(false)}
-              className="px-4 py-2 border border-[#222] text-white hover:border-accent transition-colors"
+              className="px-4 py-2 border border-[#D2B48C]/40 text-[#3E2C23] hover:border-[#A67B5B] transition-colors"
             >
               Cancel
             </button>
@@ -101,48 +101,48 @@ export const DepartmentManagement = () => {
       >
         <div className="space-y-4">
           <div>
-            <label className="block font-mono text-xs tracking-widest uppercase text-white mb-2">
+            <label className="block font-mono text-xs tracking-widest uppercase text-[#3E2C23] mb-2">
               Department Name
             </label>
             <input
               type="text"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full bg-black border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+              className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
             />
           </div>
           <div>
-            <label className="block font-mono text-xs tracking-widest uppercase text-white mb-2">
+            <label className="block font-mono text-xs tracking-widest uppercase text-[#3E2C23] mb-2">
               HOD Name
             </label>
             <input
               type="text"
               value={formData.hod}
               onChange={(e) => setFormData({ ...formData, hod: e.target.value })}
-              className="w-full bg-black border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+              className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
             />
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block font-mono text-xs tracking-widest uppercase text-white mb-2">
+              <label className="block font-mono text-xs tracking-widest uppercase text-[#3E2C23] mb-2">
                 Students
               </label>
               <input
                 type="number"
                 value={formData.students}
                 onChange={(e) => setFormData({ ...formData, students: e.target.value })}
-                className="w-full bg-black border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+                className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
               />
             </div>
             <div>
-              <label className="block font-mono text-xs tracking-widest uppercase text-white mb-2">
+              <label className="block font-mono text-xs tracking-widest uppercase text-[#3E2C23] mb-2">
                 Teachers
               </label>
               <input
                 type="number"
                 value={formData.teachers}
                 onChange={(e) => setFormData({ ...formData, teachers: e.target.value })}
-                className="w-full bg-black border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+                className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
               />
             </div>
           </div>

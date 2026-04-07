@@ -21,13 +21,13 @@ export const AdministratorProfile = () => {
   return (
     <DashboardLayout>
       <div className="max-w-2xl">
-        <h1 className="font-syne text-3xl font-bold text-white mb-6">My Profile</h1>
+        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">My Profile</h1>
 
-        <div className="bg-black border border-[#222] p-8">
+        <div className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-8">
           <div className="flex flex-col md:flex-row gap-8">
             {/* Avatar */}
             <div className="flex flex-col items-center">
-              <div className="w-32 h-32 bg-navy border-4 border-accent flex items-center justify-center font-syne text-4xl font-bold text-accent mb-4">
+              <div className="w-32 h-32 bg-[#E6D8C3] border-4 border-[#A67B5B] flex items-center justify-center font-syne text-4xl font-bold text-[#A67B5B] mb-4">
                 {profile.avatar}
               </div>
               {!isEditing && (
@@ -36,7 +36,7 @@ export const AdministratorProfile = () => {
                     setTempProfile({ ...profile });
                     setIsEditing(true);
                   }}
-                  className="font-mono text-xs tracking-widest uppercase text-accent hover:text-white border border-accent hover:border-white transition-colors px-4 py-2 mt-2"
+                  className="font-mono text-xs tracking-widest uppercase text-[#A67B5B] hover:text-[#3E2C23] border border-[#A67B5B] hover:border-white transition-colors px-4 py-2 mt-2"
                 >
                   Edit Profile
                 </button>
@@ -54,7 +54,7 @@ export const AdministratorProfile = () => {
                   { label: 'Phone', key: 'phone' },
                 ].map((field) => (
                   <div key={field.key}>
-                    <label className="block font-mono text-xs tracking-widest uppercase text-[#555] mb-1">
+                    <label className="block font-mono text-xs tracking-widest uppercase text-[#6F4E37] mb-1">
                       {field.label}
                     </label>
                     {isEditing ? (
@@ -66,10 +66,10 @@ export const AdministratorProfile = () => {
                             [field.key]: e.target.value,
                           })
                         }
-                        className="w-full bg-[#0a0a0a] border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+                        className="w-full bg-[#E6D8C3] border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
                       />
                     ) : (
-                      <p className="text-white font-mono">{profile[field.key]}</p>
+                      <p className="text-[#3E2C23] font-mono">{profile[field.key]}</p>
                     )}
                   </div>
                 ))}
@@ -85,7 +85,7 @@ export const AdministratorProfile = () => {
                   </button>
                   <button
                     onClick={() => setIsEditing(false)}
-                    className="flex-1 bg-black border border-[#222] text-white hover:border-accent transition-colors font-mono text-sm px-4 py-2"
+                    className="flex-1 bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 text-[#3E2C23] hover:border-[#A67B5B] transition-colors font-mono text-sm px-4 py-2"
                   >
                     Cancel
                   </button>

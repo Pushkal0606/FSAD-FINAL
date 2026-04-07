@@ -19,9 +19,9 @@ export const Settings = () => {
   return (
     <DashboardLayout>
       <div className="max-w-2xl">
-        <h1 className="font-syne text-3xl font-bold text-white mb-6">System Settings</h1>
+        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">System Settings</h1>
 
-        <div className="bg-black border border-[#222] p-8">
+        <div className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-8">
           <div className="space-y-6">
             {[
               { label: 'ERP Name', key: 'erpName' },
@@ -30,7 +30,7 @@ export const Settings = () => {
               { label: 'Institution Name', key: 'institutionName' },
             ].map((field) => (
               <div key={field.key}>
-                <label className="block font-mono text-xs tracking-widest uppercase text-[#555] mb-2">
+                <label className="block font-mono text-xs tracking-widest uppercase text-[#6F4E37] mb-2">
                   {field.label}
                 </label>
                 {isEditing ? (
@@ -42,10 +42,10 @@ export const Settings = () => {
                         [field.key]: e.target.value,
                       })
                     }
-                    className="w-full bg-[#0a0a0a] border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+                    className="w-full bg-[#E6D8C3] border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
                   />
                 ) : (
-                  <p className="text-white font-mono">{settings[field.key]}</p>
+                  <p className="text-[#3E2C23] font-mono">{settings[field.key]}</p>
                 )}
               </div>
             ))}
@@ -58,7 +58,7 @@ export const Settings = () => {
                   setTempSettings({ ...settings });
                   setIsEditing(true);
                 }}
-                className="bg-black border border-white text-white font-mono text-sm px-6 py-2 hover:bg-accent hover:text-black hover:border-accent transition-all"
+                className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-6 py-2 hover:bg-accent hover:text-black hover:border-[#A67B5B] transition-all"
               >
                 Edit Settings
               </button>
@@ -74,7 +74,7 @@ export const Settings = () => {
                 </button>
                 <button
                   onClick={() => setIsEditing(false)}
-                  className="flex-1 bg-black border border-[#222] text-white hover:border-accent transition-colors font-mono text-sm px-4 py-2"
+                  className="flex-1 bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 text-[#3E2C23] hover:border-[#A67B5B] transition-colors font-mono text-sm px-4 py-2"
                 >
                   Cancel
                 </button>

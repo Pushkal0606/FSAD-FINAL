@@ -12,13 +12,13 @@ export const ResourceManagement = () => {
   const getStatusColor = (status) => {
     switch (status) {
       case 'AVAILABLE':
-        return 'text-accent';
+        return 'text-[#A67B5B]';
       case 'OCCUPIED':
-        return 'text-white';
+        return 'text-[#3E2C23]';
       case 'MAINTENANCE':
-        return 'text-[#555]';
+        return 'text-[#6F4E37]';
       default:
-        return 'text-white';
+        return 'text-[#3E2C23]';
     }
   };
 
@@ -47,27 +47,27 @@ export const ResourceManagement = () => {
     <DashboardLayout>
       <div className="max-w-5xl">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="font-syne text-3xl font-bold text-white">Resource Management</h1>
+          <h1 className="font-syne text-3xl font-bold text-[#3E2C23]">Resource Management</h1>
           <button
             onClick={() => {
               setIsCreating(true);
               setFormData({ name: '', type: '', capacity: '', status: 'AVAILABLE' });
               setModalOpen(true);
             }}
-            className="bg-black border border-white text-white font-mono text-sm px-4 py-2 hover:bg-accent hover:text-black hover:border-accent transition-all"
+            className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-4 py-2 hover:bg-accent hover:text-black hover:border-[#A67B5B] transition-all"
           >
             Add Resource
           </button>
         </div>
 
-        <div className="overflow-x-auto border border-[#222]">
+        <div className="overflow-x-auto border border-[#D2B48C]/40">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-[#222] bg-[#0a0a0a]">
+              <tr className="border-b border-[#D2B48C]/40 bg-[#E6D8C3]">
                 {['Name', 'Type', 'Capacity', 'Status', 'Actions'].map((h) => (
                   <th
                     key={h}
-                    className="px-4 py-3 text-left font-mono text-xs tracking-widest uppercase text-white"
+                    className="px-4 py-3 text-left font-mono text-xs tracking-widest uppercase text-[#3E2C23]"
                   >
                     {h}
                   </th>
@@ -78,24 +78,24 @@ export const ResourceManagement = () => {
               {resources.map((resource) => (
                 <tr
                   key={resource.id}
-                  className="border-b border-[#222] hover:bg-navy hover:border-l-4 hover:border-l-accent transition-all"
+                  className="border-b border-[#D2B48C]/40 hover:bg-[#E6D8C3] hover:border-l-4 hover:border-l-[#A67B5B] transition-all"
                 >
-                  <td className="px-4 py-3 text-white text-sm">{resource.name}</td>
-                  <td className="px-4 py-3 text-white text-sm font-mono">{resource.type}</td>
-                  <td className="px-4 py-3 text-white text-sm">{resource.capacity}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] text-sm">{resource.name}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] text-sm font-mono">{resource.type}</td>
+                  <td className="px-4 py-3 text-[#3E2C23] text-sm">{resource.capacity}</td>
                   <td className={`px-4 py-3 font-mono text-xs uppercase ${getStatusColor(resource.status)}`}>
                     {resource.status}
                   </td>
                   <td className="px-4 py-3 flex gap-2">
                     <button
                       onClick={() => setModalOpen(true)}
-                      className="text-accent hover:text-white font-mono text-xs transition-colors"
+                      className="text-[#A67B5B] hover:text-[#3E2C23] font-mono text-xs transition-colors"
                     >
                       Edit
                     </button>
                     <button
                       onClick={() => handleDelete(resource.id)}
-                      className="text-[#555] hover:text-red-400 font-mono text-xs transition-colors"
+                      className="text-[#6F4E37] hover:text-red-400 font-mono text-xs transition-colors"
                     >
                       Delete
                     </button>
@@ -115,7 +115,7 @@ export const ResourceManagement = () => {
           <>
             <button
               onClick={() => setModalOpen(false)}
-              className="px-4 py-2 border border-[#222] text-white hover:border-accent transition-colors"
+              className="px-4 py-2 border border-[#D2B48C]/40 text-[#3E2C23] hover:border-[#A67B5B] transition-colors"
             >
               Cancel
             </button>
@@ -130,46 +130,46 @@ export const ResourceManagement = () => {
       >
         <div className="space-y-4">
           <div>
-            <label className="block font-mono text-xs tracking-widest uppercase text-white mb-2">
+            <label className="block font-mono text-xs tracking-widest uppercase text-[#3E2C23] mb-2">
               Name
             </label>
             <input
               type="text"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full bg-black border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+              className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
             />
           </div>
           <div>
-            <label className="block font-mono text-xs tracking-widest uppercase text-white mb-2">
+            <label className="block font-mono text-xs tracking-widest uppercase text-[#3E2C23] mb-2">
               Type
             </label>
             <input
               type="text"
               value={formData.type}
               onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-              className="w-full bg-black border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+              className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
             />
           </div>
           <div>
-            <label className="block font-mono text-xs tracking-widest uppercase text-white mb-2">
+            <label className="block font-mono text-xs tracking-widest uppercase text-[#3E2C23] mb-2">
               Capacity
             </label>
             <input
               type="number"
               value={formData.capacity}
               onChange={(e) => setFormData({ ...formData, capacity: e.target.value })}
-              className="w-full bg-black border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+              className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
             />
           </div>
           <div>
-            <label className="block font-mono text-xs tracking-widest uppercase text-white mb-2">
+            <label className="block font-mono text-xs tracking-widest uppercase text-[#3E2C23] mb-2">
               Status
             </label>
             <select
               value={formData.status}
               onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-              className="w-full bg-black border border-[#555] px-3 py-2 text-white focus:border-accent focus:outline-none transition-colors"
+              className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#555] px-3 py-2 text-[#3E2C23] focus:border-[#A67B5B] focus:outline-none transition-colors"
             >
               {['AVAILABLE', 'OCCUPIED', 'MAINTENANCE'].map((s) => (
                 <option key={s} value={s}>
