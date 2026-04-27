@@ -1,0 +1,14 @@
+target/
+*.jar
+.mvn/
+mvnw
+mvnw.cmd
+.metadata/
+.settings/
+.classpath
+.project
+.factorypath
+.vscode/
+.idea/
+.git/
+uploads/

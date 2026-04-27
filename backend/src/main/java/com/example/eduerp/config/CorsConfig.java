@@ -15,3 +15,10 @@ public class CorsConfig implements WebMvcConfigurer {
                 .allowCredentials(true);
     }
 }
+
+
+
+
+
+
+
