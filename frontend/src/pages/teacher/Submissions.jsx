@@ -91,7 +91,7 @@ export const Submissions = () => {
             <ArrowLeft size={24} />
           </button>
           <div>
-            <h1 className="font-syne text-3xl font-bold text-[#3E2C23]">
+            <h1 className="font-mono text-3xl font-bold text-[#3E2C23]">
               {assignment ? `Submissions: ${assignment.title}` : 'Submissions'}
             </h1>
             <p className="text-[#6F4E37] font-mono text-sm tracking-tight">Review and grade student work.</p>
@@ -110,9 +110,9 @@ export const Submissions = () => {
               <div 
                 key={asg.id} 
                 onClick={() => navigate(`/teacher/submissions?assignmentId=${asg.id}`)}
-                className="bg-white/80 backdrop-blur-sm border border-[#D2B48C]/40 p-6 rounded-sm shadow-sm hover:shadow-md transition-all cursor-pointer group"
+                className="bg-black border border-[#333] border border-[#D2B48C]/40 p-6 rounded-sm  hover: transition-all cursor-pointer group"
               >
-                <h3 className="font-syne text-xl font-bold text-[#3E2C23] mb-4 group-hover:text-[#A67B5B] transition-colors">{asg.title}</h3>
+                <h3 className="font-mono text-xl font-bold text-[#3E2C23] mb-4 group-hover:text-[#A67B5B] transition-colors">{asg.title}</h3>
                 <div className="flex items-center gap-2 text-xs font-mono text-[#6F4E37] mb-4">
                   <Clock size={12} />
                   Due: {new Date(asg.dueDate).toLocaleDateString()}
@@ -124,7 +124,7 @@ export const Submissions = () => {
             ))}
           </div>
         ) : (
-          <div className="bg-white/80 backdrop-blur-sm border border-[#D2B48C]/40 rounded-sm overflow-hidden shadow-sm">
+          <div className="bg-black border border-[#333] border border-[#D2B48C]/40 rounded-sm overflow-hidden ">
             <table className="w-full">
               <thead>
                 <tr className="bg-[#E6D8C3] border-b border-[#D2B48C]/40">
@@ -167,7 +167,7 @@ export const Submissions = () => {
                       </td>
                       <td className="px-6 py-4">
                         <span className={`px-2 py-1 rounded-sm text-[10px] font-mono font-bold tracking-widest uppercase ${
-                          sub.status === 'GRADED' ? 'bg-green-100 text-green-700' : 'bg-blue-100 text-blue-700'
+                          sub.status === 'GRADED' ? 'bg-green-950 text-green-700' : 'bg-[#111] text-blue-700'
                         }`}>
                           {sub.status || 'SUBMITTED'}
                         </span>
@@ -211,7 +211,7 @@ export const Submissions = () => {
               <button
                 onClick={handleGradeSubmit}
                 disabled={grading}
-                className="flex items-center gap-2 px-6 py-2 bg-[#A67B5B] text-white font-mono text-sm hover:bg-[#6F4E37] transition-colors shadow-sm disabled:opacity-50"
+                className="flex items-center gap-2 px-6 py-2 bg-[#A67B5B] text-white font-mono text-sm hover:bg-[#6F4E37] transition-colors  disabled:opacity-50"
               >
                 <Save size={16} />
                 {grading ? 'Saving...' : 'Save Grade'}
@@ -222,7 +222,7 @@ export const Submissions = () => {
           <div className="space-y-6 py-4">
             <div className="p-4 bg-[#F5EFE6] rounded-sm border border-[#D2B48C]/40">
               <h4 className="font-mono text-xs font-bold text-[#6F4E37] uppercase tracking-widest mb-3">Submitted Document</h4>
-              <div className="flex items-center justify-between bg-white p-3 border border-[#D2B48C]/20 rounded-sm">
+              <div className="flex items-center justify-between bg-black border border-[#333] p-3 border border-[#D2B48C]/20 rounded-sm">
                 <div className="flex items-center gap-3 overflow-hidden">
                   <FileText size={20} className="text-[#A67B5B]" />
                   <span className="text-sm text-[#3E2C23] truncate">{selectedSubmission.fileUrl}</span>

@@ -26,7 +26,7 @@ export const AdminDashboard = () => {
   return (
     <DashboardLayout>
       <div className="max-w-6xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Dashboard</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">Dashboard</h1>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
@@ -43,14 +43,14 @@ export const AdminDashboard = () => {
                   {stat.label}
                 </span>
               </div>
-              <div className="font-syne text-2xl font-bold text-[#3E2C23]">{stat.value}</div>
+              <div className="font-mono text-2xl font-bold text-[#3E2C23]">{stat.value}</div>
             </div>
           ))}
         </div>
 
         {/* Recent Audit Logs */}
         <div>
-          <h2 className="font-syne text-xl font-bold text-[#3E2C23] mb-4">Recent Activity</h2>
+          <h2 className="font-mono text-xl font-bold text-[#3E2C23] mb-4">Recent Activity</h2>
           <div className="overflow-x-auto border border-[#D2B48C]/40">
             <table className="w-full">
               <thead>

@@ -48,7 +48,7 @@ export const Reports = () => {
   return (
     <DashboardLayout>
       <div className="max-w-5xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Reports</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">Reports</h1>
 
         {/* Filters */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6 bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-4">
@@ -96,7 +96,7 @@ export const Reports = () => {
           <div className="flex items-end">
             <button
               onClick={handleGenerate}
-              className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-4 py-2 hover:bg-accent hover:text-black hover:border-[#A67B5B] transition-all"
+              className="w-full bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-4 py-2 hover:bg-[#a855f7] hover:text-black hover:border-[#A67B5B] transition-all"
             >
               Generate
             </button>
@@ -109,7 +109,7 @@ export const Reports = () => {
             <div className="mb-4">
               <button
                 onClick={handleExportCSV}
-                className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-6 py-2 hover:bg-accent hover:text-black hover:border-[#A67B5B] transition-all"
+                className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-6 py-2 hover:bg-[#a855f7] hover:text-black hover:border-[#A67B5B] transition-all"
               >
                 Export CSV
               </button>

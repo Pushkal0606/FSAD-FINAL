@@ -20,7 +20,7 @@ export const NotificationBell = () => {
       >
         <Bell size={20} />
         {unreadCount > 0 && (
-          <span className="absolute top-1 right-1 bg-accent text-black text-xs w-5 h-5 rounded-full flex items-center justify-center font-mono font-bold">
+          <span className="absolute top-1 right-1 bg-[#a855f7] text-black text-xs w-5 h-5 rounded-full flex items-center justify-center font-mono font-bold">
             {unreadCount}
           </span>
         )}
@@ -38,7 +38,7 @@ export const NotificationBell = () => {
               ) : (
                 recentAnnouncements.map((ann) => (
                   <div key={ann.id} className="border-b border-[#D2B48C]/40 px-4 py-3 hover:bg-[#E6D8C3] transition-colors">
-                    <p className="text-[#3E2C23] text-sm font-syne font-bold line-clamp-1">{ann.title}</p>
+                    <p className="text-[#3E2C23] text-sm font-mono font-bold line-clamp-1">{ann.title}</p>
                     <p className="text-[#6F4E37] text-xs font-mono mt-1">{ann.postedBy}</p>
                   </div>
                 ))

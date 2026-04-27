@@ -37,14 +37,14 @@ export const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5EFE6] flex items-center justify-center px-4 relative overflow-hidden z-0">
-      <BGPattern variant="interactive-dots" fill="#D2B48C" size={35} className="" />
-      <form onSubmit={handleSubmit} className="w-full max-w-sm bg-[#EDE3D2]/80 backdrop-blur-md border border-[#D2B48C] shadow-sm p-8 z-10 rounded-sm">
+    <div className="min-h-screen bg-black flex items-center justify-center px-4 relative overflow-hidden z-0">
+      <BGPattern variant="interactive-dots" fill="#4c1d95" size={35} className="" />
+      <form onSubmit={handleSubmit} className="w-full max-w-sm bg-black border border-[#333] p-8 z-10 rounded-sm">
         <div className="mb-6">
-          <div className="font-mono text-xs text-[#A67B5B] tracking-widest uppercase font-bold mb-4">
+          <div className="font-mono text-xs text-gray-400 tracking-widest uppercase font-bold mb-4">
             {getRoleLabel()}
           </div>
-          <h1 className="font-syne text-3xl font-bold text-[#3E2C23]">Sign In</h1>
+          <h1 className="font-mono text-3xl font-bold text-white">Sign In</h1>
         </div>
 
         {error && (
@@ -54,28 +54,28 @@ export const Login = () => {
         )}
 
         <div className="mb-4">
-          <label className="block font-mono text-xs tracking-widest uppercase text-[#6F4E37] mb-2">
+          <label className="block font-mono text-xs tracking-widest uppercase text-gray-400 mb-2">
             Email Address
           </label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full bg-[#F5EFE6]/90 border border-[#D2B48C] shadow-inner px-3 py-2 text-[#3E2C23] font-mono text-sm focus:border-[#A67B5B] focus:outline-none transition-colors rounded-sm"
+            className="w-full bg-[#f0f4ff] border border-gray-300 shadow-inner px-3 py-2 text-black font-mono text-sm focus:border-[#a855f7] focus:outline-none transition-colors rounded-sm"
             placeholder="your@email.com"
             required
           />
         </div>
 
         <div className="mb-6">
-          <label className="block font-mono text-xs tracking-widest uppercase text-[#6F4E37] mb-2">
+          <label className="block font-mono text-xs tracking-widest uppercase text-gray-400 mb-2">
             Password
           </label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-[#F5EFE6]/90 border border-[#D2B48C] shadow-inner px-3 py-2 text-[#3E2C23] font-mono text-sm focus:border-[#A67B5B] focus:outline-none transition-colors rounded-sm"
+            className="w-full bg-[#f0f4ff] border border-gray-300 shadow-inner px-3 py-2 text-black font-mono text-sm focus:border-[#a855f7] focus:outline-none transition-colors rounded-sm"
             placeholder="••••••••"
             required
           />
@@ -84,7 +84,7 @@ export const Login = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-[#A67B5B] border border-[#A67B5B] text-white font-mono text-sm tracking-widest uppercase py-2 hover:bg-[#6F4E37] hover:border-[#6F4E37] transition-all disabled:opacity-50 mb-3 rounded-sm shadow-sm"
+          className="w-full bg-[#a855f7] border border-[#a855f7] text-white font-mono text-sm tracking-widest uppercase py-2 hover:bg-purple-700 transition-all disabled:opacity-50 mb-3 rounded-sm"
         >
           {loading ? 'Signing in...' : 'Sign In →'}
         </button>
@@ -93,12 +93,12 @@ export const Login = () => {
 
         <div className="mt-6 text-center space-y-4">
           <div>
-            <span className="font-mono text-xs text-black">Need an account? </span>
-            <Link to={`/register/${role}`} className="font-mono text-xs text-accent hover:text-black transition-colors">
+            <span className="font-mono text-xs text-gray-400">Need an account? </span>
+            <Link to={`/register/${role}`} className="font-mono text-xs text-[#a855f7] hover:text-black transition-colors">
               Sign up
             </Link>
           </div>
-          <Link to="/" className="font-mono text-xs text-accent hover:text-black transition-colors block">
+          <Link to="/" className="font-mono text-xs text-[#a855f7] hover:text-black transition-colors block">
             ← Back to role select
           </Link>
         </div>

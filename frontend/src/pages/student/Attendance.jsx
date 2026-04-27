@@ -38,7 +38,7 @@ export const StudentAttendance = () => {
   return (
     <DashboardLayout>
       <div className="max-w-4xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Attendance</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">Attendance</h1>
 
         {/* Month Navigation */}
         <div className="flex justify-between items-center mb-6 border-b border-[#D2B48C]/40 pb-4">
@@ -91,25 +91,25 @@ export const StudentAttendance = () => {
               <div className="font-mono text-xs text-[#6F4E37] tracking-widest uppercase mb-1">
                 Present
               </div>
-              <div className="font-syne text-2xl font-bold text-[#A67B5B]">{stats.present}</div>
+              <div className="font-mono text-2xl font-bold text-[#A67B5B]">{stats.present}</div>
             </div>
             <div className="text-center">
               <div className="font-mono text-xs text-[#6F4E37] tracking-widest uppercase mb-1">
                 Absent
               </div>
-              <div className="font-syne text-2xl font-bold text-[#3E2C23]">{stats.absent}</div>
+              <div className="font-mono text-2xl font-bold text-[#3E2C23]">{stats.absent}</div>
             </div>
             <div className="text-center">
               <div className="font-mono text-xs text-[#6F4E37] tracking-widest uppercase mb-1">
                 Late
               </div>
-              <div className="font-syne text-2xl font-bold text-[#3E2C23]">{stats.late}</div>
+              <div className="font-mono text-2xl font-bold text-[#3E2C23]">{stats.late}</div>
             </div>
             <div className="text-center">
               <div className="font-mono text-xs text-[#6F4E37] tracking-widest uppercase mb-1">
                 Percentage
               </div>
-              <div className="font-syne text-2xl font-bold text-[#A67B5B]">{percentage}%</div>
+              <div className="font-mono text-2xl font-bold text-[#A67B5B]">{percentage}%</div>
             </div>
           </div>
         </div>

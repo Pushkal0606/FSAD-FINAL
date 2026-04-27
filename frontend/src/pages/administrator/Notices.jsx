@@ -24,10 +24,10 @@ export const Notices = () => {
     <DashboardLayout>
       <div className="max-w-4xl">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="font-syne text-3xl font-bold text-[#3E2C23]">Notices</h1>
+          <h1 className="font-mono text-3xl font-bold text-[#3E2C23]">Notices</h1>
           <button
             onClick={() => setModalOpen(true)}
-            className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-4 py-2 hover:bg-accent hover:text-black hover:border-[#A67B5B] transition-all"
+            className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-4 py-2 hover:bg-[#a855f7] hover:text-black hover:border-[#A67B5B] transition-all"
           >
             Publish Notice
           </button>
@@ -36,7 +36,7 @@ export const Notices = () => {
         <div className="space-y-3">
           {notices.map((notice) => (
             <div key={notice.id} className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-4 hover:bg-[#E6D8C3] transition-colors">
-              <h3 className="font-syne font-bold text-[#3E2C23]">{notice.title}</h3>
+              <h3 className="font-mono font-bold text-[#3E2C23]">{notice.title}</h3>
               <p className="text-[#3E2C23] text-sm mt-2">{notice.body}</p>
               <div className="font-mono text-xs text-[#6F4E37] mt-2">
                 Posted {new Date(notice.postedAt).toLocaleDateString()}
@@ -50,7 +50,7 @@ export const Notices = () => {
         <div className="fixed inset-0 z-50 bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm/80 flex items-center justify-center">
           <div className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 w-full max-w-md">
             <div className="border-b border-[#D2B48C]/40 px-6 py-4 flex justify-between items-center">
-              <h2 className="font-syne font-bold text-[#3E2C23] text-lg">Publish Notice</h2>
+              <h2 className="font-mono font-bold text-[#3E2C23] text-lg">Publish Notice</h2>
               <button onClick={() => setModalOpen(false)} className="text-[#6F4E37] hover:text-[#A67B5B] transition-colors">
                 ✕
               </button>
@@ -88,7 +88,7 @@ export const Notices = () => {
               </button>
               <button
                 onClick={handlePublish}
-                className="px-4 py-2 bg-accent text-black hover:bg-white transition-colors font-mono text-sm"
+                className="px-4 py-2 bg-[#a855f7] text-black hover:bg-black border border-[#333] transition-colors font-mono text-sm"
               >
                 Publish
               </button>

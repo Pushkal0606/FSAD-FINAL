@@ -64,12 +64,12 @@ export const CreateAssignment = () => {
       <div className="max-w-6xl mx-auto py-8 px-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
           <div>
-            <h1 className="font-syne text-4xl font-bold text-[#3E2C23] mb-2">Assignment Management</h1>
+            <h1 className="font-mono text-4xl font-bold text-[#3E2C23] mb-2">Assignment Management</h1>
             <p className="text-[#6F4E37] font-mono text-sm tracking-tight">Create and manage academic tasks for your students.</p>
           </div>
           <button
             onClick={() => setModalOpen(true)}
-            className="flex items-center gap-2 bg-[#A67B5B] text-white px-6 py-3 rounded-sm font-mono text-sm tracking-widest uppercase hover:bg-[#6F4E37] transition-all shadow-md group"
+            className="flex items-center gap-2 bg-[#A67B5B] text-white px-6 py-3 rounded-sm font-mono text-sm tracking-widest uppercase hover:bg-[#6F4E37] transition-all  group"
           >
             <Plus size={18} className="group-hover:rotate-90 transition-transform" />
             New Assignment
@@ -85,7 +85,7 @@ export const CreateAssignment = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {loading && assignments.length === 0 ? (
             [1, 2, 3].map(i => (
-              <div key={i} className="h-64 bg-white/50 animate-pulse border border-[#D2B48C]/40"></div>
+              <div key={i} className="h-64 bg-[#111] border-[#333] focus:border-[#a855f7] animate-pulse border border-[#D2B48C]/40"></div>
             ))
           ) : assignments.length === 0 ? (
             <div className="col-span-full py-20 text-center border-2 border-dashed border-[#D2B48C]/40 rounded-sm">
@@ -94,9 +94,9 @@ export const CreateAssignment = () => {
             </div>
           ) : (
             assignments.map((asg) => (
-              <div key={asg.id} className="bg-white/80 backdrop-blur-sm border border-[#D2B48C]/40 p-6 rounded-sm shadow-sm hover:shadow-md transition-all group">
+              <div key={asg.id} className="bg-black border border-[#333] border border-[#D2B48C]/40 p-6 rounded-sm  hover: transition-all group">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="font-syne text-xl font-bold text-[#3E2C23] line-clamp-1">{asg.title}</h3>
+                  <h3 className="font-mono text-xl font-bold text-[#3E2C23] line-clamp-1">{asg.title}</h3>
                   <div className="flex gap-2">
                     <button className="text-[#A67B5B] hover:text-[#6F4E37] transition-colors">
                       <Eye size={18} />
@@ -149,7 +149,7 @@ export const CreateAssignment = () => {
             <button
               onClick={handleCreate}
               disabled={loading}
-              className="px-6 py-2 bg-[#A67B5B] text-white font-mono text-sm hover:bg-[#6F4E37] transition-colors shadow-sm disabled:opacity-50"
+              className="px-6 py-2 bg-[#A67B5B] text-white font-mono text-sm hover:bg-[#6F4E37] transition-colors  disabled:opacity-50"
             >
               {loading ? 'Creating...' : 'Publish Assignment'}
             </button>

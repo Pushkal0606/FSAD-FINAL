@@ -34,7 +34,7 @@ export const StudentMessages = () => {
         {/* Threads List */}
         <div className="w-full md:w-1/3 bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40">
           <div className="border-b border-[#D2B48C]/40 p-4">
-            <h2 className="font-syne font-bold text-[#3E2C23]">Messages</h2>
+            <h2 className="font-mono font-bold text-[#3E2C23]">Messages</h2>
           </div>
           <div className="overflow-y-auto">
             {threads.map((thread) => (
@@ -65,7 +65,7 @@ export const StudentMessages = () => {
         {selectedThread && (
           <div className="flex-1 bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 flex flex-col">
             <div className="border-b border-[#D2B48C]/40 p-4">
-              <h3 className="font-syne font-bold text-[#3E2C23]">
+              <h3 className="font-mono font-bold text-[#3E2C23]">
                 {Object.entries(selectedThread.participantNames)
                   .filter(([id]) => id != 1)
                   .map(([, name]) => name)
@@ -82,7 +82,7 @@ export const StudentMessages = () => {
                   <div
                     className={`max-w-xs px-4 py-2 ${
                       msg.senderId === 1
-                        ? 'bg-accent text-black'
+                        ? 'bg-[#a855f7] text-black'
                         : 'bg-[#E6D8C3] text-[#3E2C23] border border-[#D2B48C]/40'
                     }`}
                   >

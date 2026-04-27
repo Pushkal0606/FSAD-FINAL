@@ -58,7 +58,7 @@ export const TeacherDashboard = () => {
     <DashboardLayout>
       <div className="max-w-6xl">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="font-syne text-3xl font-bold text-[#3E2C23]">Dashboard</h1>
+          <h1 className="font-mono text-3xl font-bold text-[#3E2C23]">Dashboard</h1>
           {error && (
             <div className="flex items-center gap-2 text-red-600 bg-red-50 px-3 py-1 rounded-sm border border-red-200 text-xs font-mono">
               <AlertCircle size={14} />
@@ -82,21 +82,21 @@ export const TeacherDashboard = () => {
                   {stat.label}
                 </span>
               </div>
-              <div className="font-syne text-2xl font-bold text-[#3E2C23]">{stat.value}</div>
+              <div className="font-mono text-2xl font-bold text-[#3E2C23]">{stat.value}</div>
             </div>
           ))}
         </div>
 
         {/* Today's Schedule */}
         <div className="mb-8">
-          <h2 className="font-syne text-xl font-bold text-[#3E2C23] mb-4">Today's Schedule</h2>
+          <h2 className="font-mono text-xl font-bold text-[#3E2C23] mb-4">Today's Schedule</h2>
           <div className="space-y-2">
             {todaySchedule.length > 0 ? (
               todaySchedule.map((period, idx) => (
                 <div key={idx} className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-3 hover:bg-[#E6D8C3] transition-colors">
                   <div className="flex justify-between items-start">
                     <div>
-                      <h3 className="font-syne font-bold text-[#3E2C23]">{period.subject}</h3>
+                      <h3 className="font-mono font-bold text-[#3E2C23]">{period.subject}</h3>
                       <div className="font-mono text-xs text-[#6F4E37] mt-1">{period.time}</div>
                     </div>
                     <div className="text-right">
@@ -115,7 +115,7 @@ export const TeacherDashboard = () => {
 
         {/* Recent Submissions */}
         <div>
-          <h2 className="font-syne text-xl font-bold text-[#3E2C23] mb-4">Recent Submissions</h2>
+          <h2 className="font-mono text-xl font-bold text-[#3E2C23] mb-4">Recent Submissions</h2>
           <div className="space-y-2">
             {[
               { student: 'Aarav Kumar', assignment: 'Array Operations', submitted: '2h ago' },
@@ -125,7 +125,7 @@ export const TeacherDashboard = () => {
               <div key={idx} className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-3 hover:bg-[#E6D8C3] transition-colors">
                 <div className="flex justify-between items-start">
                   <div>
-                    <h3 className="font-syne font-bold text-[#3E2C23]">{sub.assignment}</h3>
+                    <h3 className="font-mono font-bold text-[#3E2C23]">{sub.assignment}</h3>
                     <div className="font-mono text-xs text-[#6F4E37] mt-1">From: {sub.student}</div>
                   </div>
                   <div className="text-[#A67B5B] font-mono text-xs">{sub.submitted}</div>

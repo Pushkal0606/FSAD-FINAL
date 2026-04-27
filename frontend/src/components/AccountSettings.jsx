@@ -42,7 +42,7 @@ export const AccountSettings = () => {
 
     return (
         <div className="mt-8 border-t border-[#D2B48C]/40 pt-6">
-            <h2 className="font-syne text-xl font-bold text-[#3E2C23] mb-4">Account Security</h2>
+            <h2 className="font-mono text-xl font-bold text-[#3E2C23] mb-4">Account Security</h2>
             {statusMsg && <p className="text-[#6F4E37] font-mono text-xs mb-4">{statusMsg}</p>}
             <div className="flex gap-4">
                 <button

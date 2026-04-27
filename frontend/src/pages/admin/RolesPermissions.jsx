@@ -26,7 +26,7 @@ export const RolesPermissions = () => {
   return (
     <DashboardLayout>
       <div className="max-w-6xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Roles & Permissions</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">Roles & Permissions</h1>
 
         <div className="overflow-x-auto border border-[#D2B48C]/40">
           <table className="w-full">
@@ -61,7 +61,7 @@ export const RolesPermissions = () => {
                         onClick={() => togglePermission(role, module)}
                         className={`w-6 h-6 border transition-colors ${
                           permissions[role].includes(module)
-                            ? 'bg-accent border-[#A67B5B]'
+                            ? 'bg-[#a855f7] border-[#A67B5B]'
                             : 'border-[#555]'
                         }`}
                       >
@@ -76,7 +76,7 @@ export const RolesPermissions = () => {
         </div>
 
         <div className="mt-6">
-          <button className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-6 py-2 hover:bg-accent hover:text-black hover:border-[#A67B5B] transition-all">
+          <button className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-6 py-2 hover:bg-[#a855f7] hover:text-black hover:border-[#A67B5B] transition-all">
             Save Permissions
           </button>
         </div>

@@ -13,11 +13,11 @@ export const StudentGrades = () => {
   return (
     <DashboardLayout>
       <div className="max-w-5xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Grades</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">Grades</h1>
 
         {Object.entries(groupedBySubject).map(([subject, gradesList]) => (
           <div key={subject} className="mb-8">
-            <h2 className="font-syne text-lg font-bold text-[#3E2C23] mb-3 border-b border-[#D2B48C]/40 pb-2">
+            <h2 className="font-mono text-lg font-bold text-[#3E2C23] mb-3 border-b border-[#D2B48C]/40 pb-2">
               {subject}
             </h2>
 
@@ -60,7 +60,7 @@ export const StudentGrades = () => {
                     <p className="font-mono text-xs text-[#6F4E37] tracking-widest uppercase mb-1">
                       Final Grade
                     </p>
-                    <p className="font-syne text-2xl font-bold text-[#A67B5B]">{g.finalGrade}</p>
+                    <p className="font-mono text-2xl font-bold text-[#A67B5B]">{g.finalGrade}</p>
                   </div>
                 </div>
               </div>

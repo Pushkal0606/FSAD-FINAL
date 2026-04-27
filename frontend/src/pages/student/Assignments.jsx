@@ -93,7 +93,7 @@ export const StudentAssignments = () => {
     <DashboardLayout>
       <div className="max-w-6xl mx-auto py-8 px-4">
         <div className="mb-10">
-          <h1 className="font-syne text-4xl font-bold text-[#3E2C23] mb-2">My Assignments</h1>
+          <h1 className="font-mono text-4xl font-bold text-[#3E2C23] mb-2">My Assignments</h1>
           <p className="text-[#6F4E37] font-mono text-sm">View and submit your academic requirements.</p>
         </div>
 
@@ -106,20 +106,20 @@ export const StudentAssignments = () => {
         <div className="space-y-4">
           {loading && assignments.length === 0 ? (
             <div className="animate-pulse space-y-4">
-              {[1, 2, 3].map(i => <div key={i} className="h-20 bg-white/50 border border-[#D2B48C]/40"></div>)}
+              {[1, 2, 3].map(i => <div key={i} className="h-20 bg-[#111] border-[#333] focus:border-[#a855f7] border border-[#D2B48C]/40"></div>)}
             </div>
           ) : assignments.map((asg) => {
             const submission = getSubmissionStatus(asg.id);
             const isDue = new Date(asg.dueDate) < new Date();
             
             return (
-              <div key={asg.id} className="bg-white/80 backdrop-blur-sm border border-[#D2B48C]/40 p-5 rounded-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4 hover:shadow-md transition-all">
+              <div key={asg.id} className="bg-black border border-[#333] border border-[#D2B48C]/40 p-5 rounded-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-4 hover: transition-all">
                 <div className="flex items-center gap-4">
-                  <div className={`p-3 rounded-sm ${submission ? 'bg-green-100 text-green-600' : 'bg-[#E6D8C3] text-[#A67B5B]'}`}>
+                  <div className={`p-3 rounded-sm ${submission ? 'bg-green-950 text-green-600' : 'bg-[#E6D8C3] text-[#A67B5B]'}`}>
                     <FileText size={24} />
                   </div>
                   <div>
-                    <h3 className="font-syne text-lg font-bold text-[#3E2C23]">{asg.title}</h3>
+                    <h3 className="font-mono text-lg font-bold text-[#3E2C23]">{asg.title}</h3>
                     <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1">
                       <span className="text-xs font-mono text-[#A67B5B] flex items-center gap-1">
                         <Clock size={12} />
@@ -188,7 +188,7 @@ export const StudentAssignments = () => {
                 <button
                   onClick={handleSubmit}
                   disabled={loading || uploading || !file}
-                  className="px-6 py-2 bg-[#A67B5B] text-white font-mono text-sm hover:bg-[#6F4E37] transition-colors shadow-sm disabled:opacity-50"
+                  className="px-6 py-2 bg-[#A67B5B] text-white font-mono text-sm hover:bg-[#6F4E37] transition-colors  disabled:opacity-50"
                 >
                   {loading ? 'Submitting...' : 'Confirm Submission'}
                 </button>

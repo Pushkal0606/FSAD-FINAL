@@ -14,7 +14,7 @@ export const StudentAnnouncements = () => {
   return (
     <DashboardLayout>
       <div className="max-w-4xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Announcements</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">Announcements</h1>
 
         {/* Filter */}
         <div className="flex gap-2 mb-6">
@@ -38,7 +38,7 @@ export const StudentAnnouncements = () => {
           {filtered.map((ann) => (
             <div key={ann.id} className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-4 hover:bg-[#E6D8C3] transition-colors">
               <div className="flex justify-between items-start mb-2">
-                <h3 className="font-syne font-bold text-[#3E2C23]">{ann.title}</h3>
+                <h3 className="font-mono font-bold text-[#3E2C23]">{ann.title}</h3>
                 <span className="font-mono text-xs text-[#A67B5B] tracking-widest uppercase">
                   {ann.role}
                 </span>

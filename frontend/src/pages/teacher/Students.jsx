@@ -36,7 +36,7 @@ export const TeacherStudents = () => {
   return (
     <DashboardLayout>
       <div className="max-w-5xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Students</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">Students</h1>
 
         <div className="mb-6">
           <input
@@ -82,7 +82,7 @@ export const TeacherStudents = () => {
                   <td className="px-4 py-3 text-[#3E2C23] text-xs font-mono">{student.role}</td>
                   <td className="px-4 py-3">
                     <span className={`px-2 py-1 rounded-sm text-[10px] font-mono font-bold tracking-widest uppercase ${
-                      student.status === 'ACTIVE' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                      student.status === 'ACTIVE' ? 'bg-green-950 text-green-700' : 'bg-red-100 text-red-700'
                     }`}>
                       {student.status || 'ACTIVE'}
                     </span>
@@ -126,7 +126,7 @@ export const TeacherStudents = () => {
                 {selectedStudent.avatar}
               </div>
               <div>
-                <h3 className="font-syne font-bold text-[#3E2C23] text-lg">
+                <h3 className="font-mono font-bold text-[#3E2C23] text-lg">
                   {selectedStudent.name}
                 </h3>
                 <p className="text-[#A67B5B] font-mono text-xs">{selectedStudent.enrollmentId}</p>

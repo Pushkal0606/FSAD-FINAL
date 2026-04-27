@@ -19,7 +19,7 @@ export const Settings = () => {
   return (
     <DashboardLayout>
       <div className="max-w-2xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">System Settings</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">System Settings</h1>
 
         <div className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-8">
           <div className="space-y-6">
@@ -58,7 +58,7 @@ export const Settings = () => {
                   setTempSettings({ ...settings });
                   setIsEditing(true);
                 }}
-                className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-6 py-2 hover:bg-accent hover:text-black hover:border-[#A67B5B] transition-all"
+                className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-white text-[#3E2C23] font-mono text-sm px-6 py-2 hover:bg-[#a855f7] hover:text-black hover:border-[#A67B5B] transition-all"
               >
                 Edit Settings
               </button>
@@ -68,7 +68,7 @@ export const Settings = () => {
               <>
                 <button
                   onClick={handleSave}
-                  className="flex-1 bg-accent text-black hover:bg-white transition-colors font-mono text-sm px-4 py-2 font-bold"
+                  className="flex-1 bg-[#a855f7] text-black hover:bg-black border border-[#333] transition-colors font-mono text-sm px-4 py-2 font-bold"
                 >
                   Save Changes
                 </button>

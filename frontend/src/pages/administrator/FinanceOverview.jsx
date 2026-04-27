@@ -33,7 +33,7 @@ export const FinanceOverview = () => {
   return (
     <DashboardLayout>
       <div className="max-w-5xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Finance Overview</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">Finance Overview</h1>
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
@@ -43,7 +43,7 @@ export const FinanceOverview = () => {
             { label: 'Partial', value: stats.partial, color: 'text-yellow-500' },
           ].map((stat) => (
             <div key={stat.label} className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-4 text-center">
-              <div className={`font-syne text-2xl font-bold ${stat.color} mb-1`}>
+              <div className={`font-mono text-2xl font-bold ${stat.color} mb-1`}>
                 {stat.value}
               </div>
               <div className="font-mono text-xs text-[#6F4E37] tracking-widest uppercase">

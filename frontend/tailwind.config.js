@@ -12,7 +12,6 @@ export default {
         dark: "#0a0a0a",
       },
       fontFamily: {
-        syne: ['Syne', 'sans-serif'],
         mono: ['Space Mono', 'monospace'],
       },
       borderRadius: {

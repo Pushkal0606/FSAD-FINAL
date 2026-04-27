@@ -14,7 +14,7 @@ export const AuditLogs = () => {
   return (
     <DashboardLayout>
       <div className="max-w-5xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Audit Logs</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">Audit Logs</h1>
 
         <div className="mb-6 flex gap-2">
           {['all', 'LOGIN', 'CREATE', 'UPDATE', 'DELETE'].map((f) => (

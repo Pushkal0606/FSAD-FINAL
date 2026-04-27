@@ -75,12 +75,12 @@ export const Sidebar = ({ isOpen, onClose }) => {
     <>
       {isOpen && <div className="fixed inset-0 bg-[#3E2C23]/50 z-30 md:hidden" onClick={onClose} />}
       <aside
-        className={`fixed left-0 top-0 bottom-0 w-56 bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border-r border-[#D2B48C]/40 z-40 transform transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed left-0 top-0 bottom-0 w-56 bg-black border-r border-[#333] z-40 transform transition-transform ${isOpen ? 'translate-x-0' : '-translate-x-full'
           } md:translate-x-0 md:relative flex flex-col overflow-y-auto`}
       >
-        <div className="p-6 border-b border-[#D2B48C]/40 flex items-center justify-between md:justify-start">
-          <div className="font-mono text-sm font-bold text-[#3E2C23] tracking-widest">EDUERP</div>
-          <button onClick={onClose} className="md:hidden text-[#6F4E37] hover:text-[#3E2C23]">
+        <div className="p-6 border-b border-[#333] flex items-center justify-between md:justify-start">
+          <div className="font-mono text-sm font-bold text-white tracking-widest uppercase">eduerp</div>
+          <button onClick={onClose} className="md:hidden text-gray-400 hover:text-white">
             <X size={20} />
           </button>
         </div>
@@ -93,10 +93,10 @@ export const Sidebar = ({ isOpen, onClose }) => {
                 navigate(item.path);
                 onClose();
               }}
-              className={`w-full flex items-center gap-3 px-3 py-2 transition-all border-l-4 ${isActive(item.path)
-                ? 'border-l-[#A67B5B] text-[#A67B5B] bg-[#E6D8C3]'
-                : 'border-l-transparent text-[#3E2C23] hover:text-[#A67B5B] hover:border-l-[#A67B5B]'
-                }`}
+            className={`w-full flex items-center gap-3 px-3 py-2 transition-all border-l-4 ${isActive(item.path)
+              ? 'border-l-[#a855f7] text-[#a855f7] bg-purple-900/20'
+              : 'border-l-transparent text-gray-400 hover:text-white hover:border-l-[#a855f7]'
+              }`}
             >
               <item.icon size={18} />
               <span className="font-mono text-xs tracking-widest uppercase">{item.label}</span>
@@ -104,10 +104,10 @@ export const Sidebar = ({ isOpen, onClose }) => {
           ))}
         </nav>
 
-        <div className="border-t border-[#D2B48C]/40 p-3">
+        <div className="border-t border-[#333] p-3">
           <button
             onClick={() => setShowLogoutModal(true)}
-            className="w-full flex items-center gap-3 px-3 py-2 text-[#3E2C23] hover:text-[#A67B5B] transition-colors border border-transparent hover:border-[#A67B5B]"
+            className="w-full flex items-center gap-3 px-3 py-2 text-gray-400 hover:text-[#a855f7] transition-colors border border-transparent hover:border-[#a855f7]"
           >
             <LogOut size={18} />
             <span className="font-mono text-xs tracking-widest uppercase">Logout</span>
@@ -123,20 +123,20 @@ export const Sidebar = ({ isOpen, onClose }) => {
           <>
             <button
               onClick={() => setShowLogoutModal(false)}
-              className="px-4 py-2 border border-[#D2B48C]/40 text-[#3E2C23] hover:border-[#A67B5B] transition-colors font-mono text-sm"
+              className="px-4 py-2 border border-[#333] text-gray-400 hover:border-[#a855f7] transition-colors font-mono text-sm"
             >
               Cancel
             </button>
             <button
               onClick={handleLogout}
-              className="px-4 py-2 bg-[#3E2C23] text-white hover:bg-[#6F4E37] transition-colors font-mono text-sm"
+              className="px-4 py-2 bg-black border border-[#333] text-white hover:bg-purple-700 transition-colors font-mono text-sm"
             >
               Logout
             </button>
           </>
         }
       >
-        <p className="text-[#3E2C23] font-mono text-sm">Are you sure you want to log out of your academic space?</p>
+        <p className="text-gray-400 font-mono text-sm">Are you sure you want to log out of your academic space?</p>
       </Modal>
     </>
   );

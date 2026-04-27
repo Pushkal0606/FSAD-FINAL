@@ -8,7 +8,7 @@ export const StudentSchedule = () => {
   return (
     <DashboardLayout>
       <div className="max-w-5xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Schedule</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">Schedule</h1>
 
         <div className="overflow-x-auto">
           <table className="w-full border border-[#D2B48C]/40">
@@ -57,7 +57,7 @@ export const StudentSchedule = () => {
                       >
                         {schedule.subject && (
                           <>
-                            <div className="font-syne font-bold">{schedule.subject}</div>
+                            <div className="font-mono font-bold">{schedule.subject}</div>
                             <div className="text-xs text-[#6F4E37]">
                               {schedule.teacher}
                             </div>

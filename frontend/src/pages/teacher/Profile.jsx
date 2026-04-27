@@ -23,13 +23,13 @@ export const TeacherProfile = () => {
   return (
     <DashboardLayout>
       <div className="max-w-2xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">My Profile</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">My Profile</h1>
 
         <div className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-8">
           <div className="flex flex-col md:flex-row gap-8">
             {/* Avatar */}
             <div className="flex flex-col items-center">
-              <div className="w-32 h-32 bg-[#E6D8C3] border-4 border-[#A67B5B] flex items-center justify-center font-syne text-4xl font-bold text-[#A67B5B] mb-4">
+              <div className="w-32 h-32 bg-[#E6D8C3] border-4 border-[#A67B5B] flex items-center justify-center font-mono text-4xl font-bold text-[#A67B5B] mb-4">
                 {profile.avatar}
               </div>
               {!isEditing && (
@@ -82,7 +82,7 @@ export const TeacherProfile = () => {
                 <div className="flex gap-2 mt-6">
                   <button
                     onClick={handleSave}
-                    className="flex-1 bg-accent text-black hover:bg-white transition-colors font-mono text-sm px-4 py-2 font-bold"
+                    className="flex-1 bg-[#a855f7] text-black hover:bg-black border border-[#333] transition-colors font-mono text-sm px-4 py-2 font-bold"
                   >
                     Save Changes
                   </button>

@@ -15,18 +15,18 @@ export const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F5EFE6] flex flex-col relative overflow-hidden z-0">
-      <BGPattern variant="interactive-dots" fill="#D2B48C" size={35} className="" />
-      <header className="border-b border-[#D2B48C] px-6 py-4 flex justify-between items-center z-10">
-        <div className="font-mono text-sm font-bold text-[#3E2C23] tracking-widest bg-[#F5EFE6]/70 backdrop-blur-md px-3 py-1 rounded-sm border border-[#D2B48C]">EDUCORE</div>
-        <div className="font-mono text-xs text-[#3E2C23] tracking-widest bg-[#F5EFE6]/70 backdrop-blur-md px-3 py-1 rounded-sm border border-[#D2B48C]">FSAD-PS13 // Select your role to continue</div>
+    <div className="min-h-screen bg-black flex flex-col relative overflow-hidden z-0">
+      <BGPattern variant="interactive-dots" fill="#4c1d95" size={35} className="" />
+      <header className="border-b border-[#333] px-6 py-4 flex justify-between items-center z-10">
+        <div className="font-mono text-sm font-bold text-white tracking-widest bg-black px-3 py-1 rounded-sm border border-[#333] uppercase">eduerp</div>
+        <div className="font-mono text-xs text-white tracking-widest bg-black px-3 py-1 rounded-sm border border-[#333]">FSAD-PS13 // Select your role to continue</div>
       </header>
 
       <main className="flex-1 flex flex-col items-center justify-center px-6 py-12 z-10 pointer-events-none">
-        <h1 className="font-syne text-5xl md:text-6xl font-bold text-[#3E2C23] mb-4 text-center bg-[#F5EFE6]/70 backdrop-blur-md p-4 rounded-sm border border-[#D2B48C] pointer-events-auto shadow-sm">
+        <h1 className="font-mono text-5xl md:text-6xl font-bold text-white mb-4 text-center bg-black p-4 rounded-sm border border-[#333] pointer-events-auto">
           Select Your Role
         </h1>
-        <p className="font-mono text-xs tracking-widest text-[#8B6F5C] italic mb-12 bg-[#F5EFE6]/70 backdrop-blur-md px-4 py-2 rounded-sm border border-[#D2B48C] pointer-events-auto">
+        <p className="font-mono text-xs tracking-widest text-gray-400 italic mb-12 bg-black px-4 py-2 rounded-sm border border-[#333] pointer-events-auto">
           Choose your path and access your academic space
         </p>
 
@@ -34,7 +34,7 @@ export const Home = () => {
           {roles.map((role, idx) => (
             <div
               key={idx}
-              className="border border-[#D2B48C]/40 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="border border-[#333] rounded-sm overflow-hidden transition-shadow"
             >
               <RoleCard {...role} />
             </div>
@@ -42,9 +42,9 @@ export const Home = () => {
         </div>
       </main>
 
-      <footer className="border-t border-[#D2B48C] px-6 py-4 text-center z-10">
-        <div className="font-mono text-xs text-[#3E2C23] tracking-widest bg-[#F5EFE6]/70 backdrop-blur-md inline-block px-4 py-2 rounded-sm border border-[#D2B48C]">
-          FSAD-PS13 · EDUCORE · 2025
+      <footer className="border-t border-[#333] px-6 py-4 text-center z-10">
+        <div className="font-mono text-xs text-white tracking-widest bg-black inline-block px-4 py-2 rounded-sm border border-[#333] uppercase">
+          FSAD-PS13 · EDUERP · 2025
         </div>
       </footer>
     </div>

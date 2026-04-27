@@ -35,7 +35,7 @@ export const StudentDashboard = () => {
   return (
     <DashboardLayout>
       <div className="max-w-6xl">
-        <h1 className="font-syne text-3xl font-bold text-[#3E2C23] mb-6">Dashboard</h1>
+        <h1 className="font-mono text-3xl font-bold text-[#3E2C23] mb-6">Dashboard</h1>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
@@ -52,18 +52,18 @@ export const StudentDashboard = () => {
                   {stat.label}
                 </span>
               </div>
-              <div className="font-syne text-2xl font-bold text-[#3E2C23]">{stat.value}</div>
+              <div className="font-mono text-2xl font-bold text-[#3E2C23]">{stat.value}</div>
             </div>
           ))}
         </div>
 
         {/* Recent Announcements */}
         <div className="mb-8">
-          <h2 className="font-syne text-xl font-bold text-[#3E2C23] mb-4">Recent Announcements</h2>
+          <h2 className="font-mono text-xl font-bold text-[#3E2C23] mb-4">Recent Announcements</h2>
           <div className="space-y-2">
             {recentAnnouncements.map((ann) => (
               <div key={ann.id} className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-4 hover:bg-[#E6D8C3] transition-colors">
-                <h3 className="font-syne font-bold text-[#3E2C23]">{ann.title}</h3>
+                <h3 className="font-mono font-bold text-[#3E2C23]">{ann.title}</h3>
                 <p className="text-[#3E2C23] text-sm mt-1 line-clamp-2">{ann.body}</p>
                 <div className="font-mono text-xs text-[#6F4E37] mt-2">
                   Posted by {ann.postedBy} · {new Date(ann.createdAt).toLocaleDateString()}
@@ -75,11 +75,11 @@ export const StudentDashboard = () => {
 
         {/* Upcoming Assignments */}
         <div>
-          <h2 className="font-syne text-xl font-bold text-[#3E2C23] mb-4">Upcoming Assignments</h2>
+          <h2 className="font-mono text-xl font-bold text-[#3E2C23] mb-4">Upcoming Assignments</h2>
           <div className="space-y-2">
             {upcomingAssignments.map((asg) => (
               <div key={asg.id} className="bg-[#EDE3D2]/80 backdrop-blur-md rounded-sm border border-[#D2B48C]/40 p-4 hover:bg-[#E6D8C3] transition-colors">
-                <h3 className="font-syne font-bold text-[#3E2C23]">{asg.title}</h3>
+                <h3 className="font-mono font-bold text-[#3E2C23]">{asg.title}</h3>
                 <div className="flex justify-between mt-2">
                   <span className="font-mono text-xs text-[#6F4E37]">{asg.subject}</span>
                   <span className="font-mono text-xs text-[#A67B5B]">

@@ -50,7 +50,7 @@ export const MarkAttendance = () => {
   return (
     <DashboardLayout>
       <div className="max-w-4xl mx-auto py-8 px-4">
-        <h1 className="font-syne text-4xl font-bold text-[#3E2C23] mb-2">Mark Attendance</h1>
+        <h1 className="font-mono text-4xl font-bold text-[#3E2C23] mb-2">Mark Attendance</h1>
         <p className="text-[#6F4E37] font-mono text-sm mb-10 uppercase tracking-widest">Daily Academic Records</p>
 
         <div className="mb-8">
@@ -77,7 +77,7 @@ export const MarkAttendance = () => {
           </div>
         )}
 
-        <div className="bg-white/80 backdrop-blur-sm border border-[#D2B48C]/40 rounded-sm overflow-hidden shadow-sm">
+        <div className="bg-black border border-[#333] border border-[#D2B48C]/40 rounded-sm overflow-hidden ">
           <table className="w-full">
             <thead>
               <tr className="bg-[#E6D8C3] border-b border-[#D2B48C]/40">
@@ -126,7 +126,7 @@ export const MarkAttendance = () => {
           <button 
             onClick={handleSubmit}
             disabled={submitting || students.length === 0}
-            className="flex items-center gap-2 bg-[#3E2C23] text-white font-mono text-sm px-10 py-4 rounded-sm hover:bg-[#6F4E37] transition-all disabled:opacity-50 shadow-lg uppercase tracking-widest font-bold"
+            className="flex items-center gap-2 bg-[#3E2C23] text-white font-mono text-sm px-10 py-4 rounded-sm hover:bg-[#6F4E37] transition-all disabled:opacity-50  uppercase tracking-widest font-bold"
           >
             <Check size={18} />
             {submitting ? 'Processing...' : 'Submit Records'}
