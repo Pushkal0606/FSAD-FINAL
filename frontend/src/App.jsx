@@ -49,283 +49,283 @@ import { Notices } from './pages/administrator/Notices';
 import { AdministratorProfile } from './pages/administrator/Profile';
 
 export default function App() {
-  return (
-    <BrowserRouter>
-      <AuthProvider>
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<Home />} />
-          <Route path="/login/:role" element={<Login />} />
-          <Route path="/register/:role" element={<Register />} />
+ return (
+ <BrowserRouter>
+ <AuthProvider>
+ <Routes>
+ {/* Public Routes */}
+ <Route path="/" element={<Home />} />
+ <Route path="/login/:role" element={<Login />} />
+ <Route path="/register/:role" element={<Register />} />
 
-          {/* Student Routes */}
-          <Route
-            path="/student/dashboard"
-            element={
-              <PrivateRoute requiredRole="student">
-                <StudentDashboard />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/student/announcements"
-            element={
-              <PrivateRoute requiredRole="student">
-                <StudentAnnouncements />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/student/assignments"
-            element={
-              <PrivateRoute requiredRole="student">
-                <StudentAssignments />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/student/grades"
-            element={
-              <PrivateRoute requiredRole="student">
-                <StudentGrades />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/student/attendance"
-            element={
-              <PrivateRoute requiredRole="student">
-                <StudentAttendance />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/student/schedule"
-            element={
-              <PrivateRoute requiredRole="student">
-                <StudentSchedule />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/student/messages"
-            element={
-              <PrivateRoute requiredRole="student">
-                <StudentMessages />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/student/profile"
-            element={
-              <PrivateRoute requiredRole="student">
-                <StudentProfile />
-              </PrivateRoute>
-            }
-          />
+ {/* Student Routes */}
+ <Route
+ path="/student/dashboard"
+ element={
+ <PrivateRoute requiredRole="student">
+ <StudentDashboard />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/student/announcements"
+ element={
+ <PrivateRoute requiredRole="student">
+ <StudentAnnouncements />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/student/assignments"
+ element={
+ <PrivateRoute requiredRole="student">
+ <StudentAssignments />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/student/grades"
+ element={
+ <PrivateRoute requiredRole="student">
+ <StudentGrades />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/student/attendance"
+ element={
+ <PrivateRoute requiredRole="student">
+ <StudentAttendance />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/student/schedule"
+ element={
+ <PrivateRoute requiredRole="student">
+ <StudentSchedule />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/student/messages"
+ element={
+ <PrivateRoute requiredRole="student">
+ <StudentMessages />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/student/profile"
+ element={
+ <PrivateRoute requiredRole="student">
+ <StudentProfile />
+ </PrivateRoute>
+ }
+ />
 
-          {/* Teacher Routes */}
-          <Route
-            path="/teacher/dashboard"
-            element={
-              <PrivateRoute requiredRole="teacher">
-                <TeacherDashboard />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/teacher/announcements"
-            element={
-              <PrivateRoute requiredRole="teacher">
-                <TeacherAnnouncements />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/teacher/create-assignment"
-            element={
-              <PrivateRoute requiredRole="teacher">
-                <CreateAssignment />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/teacher/submissions"
-            element={
-              <PrivateRoute requiredRole="teacher">
-                <Submissions />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/teacher/mark-attendance"
-            element={
-              <PrivateRoute requiredRole="teacher">
-                <MarkAttendance />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/teacher/grades"
-            element={
-              <PrivateRoute requiredRole="teacher">
-                <TeacherGrades />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/teacher/students"
-            element={
-              <PrivateRoute requiredRole="teacher">
-                <TeacherStudents />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/teacher/messages"
-            element={
-              <PrivateRoute requiredRole="teacher">
-                <TeacherMessages />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/teacher/profile"
-            element={
-              <PrivateRoute requiredRole="teacher">
-                <TeacherProfile />
-              </PrivateRoute>
-            }
-          />
+ {/* Teacher Routes */}
+ <Route
+ path="/teacher/dashboard"
+ element={
+ <PrivateRoute requiredRole="teacher">
+ <TeacherDashboard />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/teacher/announcements"
+ element={
+ <PrivateRoute requiredRole="teacher">
+ <TeacherAnnouncements />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/teacher/create-assignment"
+ element={
+ <PrivateRoute requiredRole="teacher">
+ <CreateAssignment />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/teacher/submissions"
+ element={
+ <PrivateRoute requiredRole="teacher">
+ <Submissions />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/teacher/mark-attendance"
+ element={
+ <PrivateRoute requiredRole="teacher">
+ <MarkAttendance />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/teacher/grades"
+ element={
+ <PrivateRoute requiredRole="teacher">
+ <TeacherGrades />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/teacher/students"
+ element={
+ <PrivateRoute requiredRole="teacher">
+ <TeacherStudents />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/teacher/messages"
+ element={
+ <PrivateRoute requiredRole="teacher">
+ <TeacherMessages />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/teacher/profile"
+ element={
+ <PrivateRoute requiredRole="teacher">
+ <TeacherProfile />
+ </PrivateRoute>
+ }
+ />
 
-          {/* Admin Routes */}
-          <Route
-            path="/admin/dashboard"
-            element={
-              <PrivateRoute requiredRole="admin">
-                <AdminDashboard />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/admin/users"
-            element={
-              <PrivateRoute requiredRole="admin">
-                <UserManagement />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/admin/roles-permissions"
-            element={
-              <PrivateRoute requiredRole="admin">
-                <RolesPermissions />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/admin/announcements"
-            element={
-              <PrivateRoute requiredRole="admin">
-                <SystemAnnouncements />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/admin/audit-logs"
-            element={
-              <PrivateRoute requiredRole="admin">
-                <AuditLogs />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/admin/settings"
-            element={
-              <PrivateRoute requiredRole="admin">
-                <Settings />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/admin/profile"
-            element={
-              <PrivateRoute requiredRole="admin">
-                <AdminProfile />
-              </PrivateRoute>
-            }
-          />
+ {/* Admin Routes */}
+ <Route
+ path="/admin/dashboard"
+ element={
+ <PrivateRoute requiredRole="admin">
+ <AdminDashboard />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/admin/users"
+ element={
+ <PrivateRoute requiredRole="admin">
+ <UserManagement />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/admin/roles-permissions"
+ element={
+ <PrivateRoute requiredRole="admin">
+ <RolesPermissions />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/admin/announcements"
+ element={
+ <PrivateRoute requiredRole="admin">
+ <SystemAnnouncements />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/admin/audit-logs"
+ element={
+ <PrivateRoute requiredRole="admin">
+ <AuditLogs />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/admin/settings"
+ element={
+ <PrivateRoute requiredRole="admin">
+ <Settings />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/admin/profile"
+ element={
+ <PrivateRoute requiredRole="admin">
+ <AdminProfile />
+ </PrivateRoute>
+ }
+ />
 
-          {/* Administrator Routes */}
-          <Route
-            path="/administrator/dashboard"
-            element={
-              <PrivateRoute requiredRole="administrator">
-                <AdministratorDashboard />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/administrator/overview"
-            element={
-              <PrivateRoute requiredRole="administrator">
-                <InstitutionalOverview />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/administrator/resources"
-            element={
-              <PrivateRoute requiredRole="administrator">
-                <ResourceManagement />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/administrator/reports"
-            element={
-              <PrivateRoute requiredRole="administrator">
-                <Reports />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/administrator/departments"
-            element={
-              <PrivateRoute requiredRole="administrator">
-                <DepartmentManagement />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/administrator/finance"
-            element={
-              <PrivateRoute requiredRole="administrator">
-                <FinanceOverview />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/administrator/notices"
-            element={
-              <PrivateRoute requiredRole="administrator">
-                <Notices />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/administrator/profile"
-            element={
-              <PrivateRoute requiredRole="administrator">
-                <AdministratorProfile />
-              </PrivateRoute>
-            }
-          />
+ {/* Administrator Routes */}
+ <Route
+ path="/administrator/dashboard"
+ element={
+ <PrivateRoute requiredRole="administrator">
+ <AdministratorDashboard />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/administrator/overview"
+ element={
+ <PrivateRoute requiredRole="administrator">
+ <InstitutionalOverview />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/administrator/resources"
+ element={
+ <PrivateRoute requiredRole="administrator">
+ <ResourceManagement />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/administrator/reports"
+ element={
+ <PrivateRoute requiredRole="administrator">
+ <Reports />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/administrator/departments"
+ element={
+ <PrivateRoute requiredRole="administrator">
+ <DepartmentManagement />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/administrator/finance"
+ element={
+ <PrivateRoute requiredRole="administrator">
+ <FinanceOverview />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/administrator/notices"
+ element={
+ <PrivateRoute requiredRole="administrator">
+ <Notices />
+ </PrivateRoute>
+ }
+ />
+ <Route
+ path="/administrator/profile"
+ element={
+ <PrivateRoute requiredRole="administrator">
+ <AdministratorProfile />
+ </PrivateRoute>
+ }
+ />
 
-          {/* Catch-all redirect */}
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </AuthProvider>
-    </BrowserRouter>
-  );
+ {/* Catch-all redirect */}
+ <Route path="*" element={<Navigate to="/" />} />
+ </Routes>
+ </AuthProvider>
+ </BrowserRouter>
+ );
 }

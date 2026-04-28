@@ -6,7 +6,7 @@ import './index.css'
 console.log("Portal starting... API URL:", import.meta.env.VITE_API_URL || 'Local Mode');
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ <React.StrictMode>
+ <App />
+ </React.StrictMode>,
 )
